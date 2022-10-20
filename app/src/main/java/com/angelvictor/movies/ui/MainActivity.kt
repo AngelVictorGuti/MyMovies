@@ -1,7 +1,8 @@
-package com.angelvictor.movies
+package com.angelvictor.movies.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.angelvictor.movies.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
