@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="margin_xs">4dp</dimen>
+    <dimen name="margin_s">8dp</dimen>
+    <dimen name="margin_m">16dp</dimen>
+
+    <dimen name="button_text_size">20sp</dimen>
+</resources>
