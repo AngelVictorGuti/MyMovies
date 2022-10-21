@@ -72,3 +72,7 @@ buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab
 buildSrc/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at
 buildSrc/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab
 .idea/misc.xml
+buildSrc/build/libs/buildSrc.jar
+buildSrc/build/kotlin/compileKotlin/last-build.bin
+buildSrc/build/kotlin/compileKotlin/build-history.bin
+.idea/misc.xml
