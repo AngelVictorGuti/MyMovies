@@ -5,10 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.angelvictor.movies.domain.Movie
 import com.angelvictor.movies.ui.common.mockListMovie
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class BillboardViewModel : ViewModel(
+@HiltViewModel
+class BillboardViewModel @Inject constructor(
 
-) {
+): ViewModel() {
 
     private val _moviesList = MutableLiveData<List<Movie>>()
     val moviesList: LiveData<List<Movie>>

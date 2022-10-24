@@ -8,7 +8,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentBillboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private val viewModel: BillboardViewModel by viewModels()
