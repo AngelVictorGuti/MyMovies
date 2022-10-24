@@ -14,13 +14,13 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/category_title"
+            android:id="@+id/categoryTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_s"
             android:gravity="center"
             android:lines="2"
-            android:minLines="2"
+            android:maxLines="2"
             style="@style/AppTheme.Button"
             tools:text="@string/category_latest" />
     </LinearLayout>

@@ -164,3 +164,4 @@ buildSrc/build/kotlin/compileKotlin/build-history.bin
 buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.values.at
 buildSrc/build/kotlin/compileKotlin/last-build.bin
 buildSrc/build/libs/buildSrc.jar
+buildSrc/build/libs/buildSrc.jar
