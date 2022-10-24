@@ -51,6 +51,9 @@ android {
 }
 
 dependencies {
+
+    implementation project(":domain")
+
     implementation Libs.AndroidX.coreKtx
     implementation Libs.AndroidX.appCompat
     implementation Libs.AndroidX.recyclerView
