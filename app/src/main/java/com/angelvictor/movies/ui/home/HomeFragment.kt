@@ -8,7 +8,9 @@ import androidx.navigation.fragment.findNavController
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentHomeBinding
 import com.angelvictor.movies.ui.common.Category
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val viewModel: HomeViewModel by viewModels()

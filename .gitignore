@@ -165,3 +165,6 @@ buildSrc/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/constants.tab.values.a
 buildSrc/build/kotlin/compileKotlin/last-build.bin
 buildSrc/build/libs/buildSrc.jar
 buildSrc/build/libs/buildSrc.jar
+buildSrc/build/classes/kotlin/main/com/angelvictor/movies/buildsrc/Libs.class
+buildSrc/build/libs/buildSrc.jar
+buildSrc/build/libs/buildSrc.jar

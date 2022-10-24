@@ -6,11 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.getCategories
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
 
-) {
+): ViewModel() {
 
     private val _categoriesList = MutableLiveData<List<Category>>()
     val categoriesList: LiveData<List<Category>>
