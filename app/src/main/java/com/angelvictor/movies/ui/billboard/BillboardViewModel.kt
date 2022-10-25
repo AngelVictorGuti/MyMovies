@@ -20,7 +20,7 @@ class BillboardViewModel @Inject constructor(
     private val requestNowPlayingMoviesUseCase: RequestNowPlayingMoviesUseCase,
     private val requestTopRatedMoviesUseCase: RequestTopRatedMoviesUseCase,
     private val requestUpcomingMoviesUseCase: RequestUpcomingMoviesUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private val _moviesList = MutableLiveData<List<Movie>>()
     val moviesList: LiveData<List<Movie>>
@@ -28,8 +28,7 @@ class BillboardViewModel @Inject constructor(
 
     fun onUiReady(categoryType: CategoryType) {
         viewModelScope.launch {
-            val movieList: List<Movie> = when(categoryType){
-                CategoryType.LATEST -> requestPopularMoviesUseCase()
+            val movieList: List<Movie> = when (categoryType) {
                 CategoryType.NOW_PLAYING -> requestNowPlayingMoviesUseCase()
                 CategoryType.POPULAR -> requestPopularMoviesUseCase()
                 CategoryType.TOP -> requestTopRatedMoviesUseCase()

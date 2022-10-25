@@ -12,11 +12,10 @@ data class Category(
 ): Parcelable
 
 enum class CategoryType {
-    LATEST, NOW_PLAYING, POPULAR, TOP, UPCOMING
+    NOW_PLAYING, POPULAR, TOP, UPCOMING
 }
 
 fun getCategories() = listOf(
-    Category(title = R.string.category_latest, type = CategoryType.LATEST),
     Category(title = R.string.category_now_playing, type = CategoryType.NOW_PLAYING),
     Category(title = R.string.category_popular, type = CategoryType.POPULAR),
     Category(title = R.string.category_top, type = CategoryType.TOP),
