@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">Movies</string>
 
-    <string name="category_latest">Últimos lanzamientos</string>
-    <string name="category_now_playing">En cartelera</string>
-    <string name="category_popular">Populares</string>
-    <string name="category_top">Mejor valoradas</string>
-    <string name="category_upcoming">Próximos estrenos</string>
+    <string name="category_now_playing">Billboard</string>
+    <string name="category_popular">Popular</string>
+    <string name="category_top">Top Rated</string>
+    <string name="category_upcoming">Upcoming</string>
 </resources>
