@@ -1,0 +1,13 @@
+package com.angelvictor.movies.data
+
+import com.angelvictor.movies.data.datasource.MovieRemoteDataSource
+import com.angelvictor.movies.domain.Movie
+import javax.inject.Inject
+
+class MoviesRepository @Inject constructor(
+    private val remoteDataSource: MovieRemoteDataSource
+) {
+    suspend fun requestPopularMovies(): List<Movie> {
+        return remoteDataSource.getPopularMovies()
+    }
+}

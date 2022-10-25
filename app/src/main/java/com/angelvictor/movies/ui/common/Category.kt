@@ -3,7 +3,7 @@ package com.angelvictor.movies.ui.common
 import android.os.Parcelable
 import androidx.annotation.StringRes
 import com.angelvictor.movies.R
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Category(

@@ -1,0 +1,20 @@
+import com.angelvictor.movies.buildsrc.Libs
+
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'org.jetbrains.kotlin.kapt'
+}
+
+dependencies {
+    implementation project(":domain")
+
+    implementation Libs.Kotlin.Coroutines.core
+    implementation Libs.JavaX.inject
+    implementation Libs.Arrow.core
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
