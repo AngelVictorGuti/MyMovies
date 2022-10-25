@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.angelvictor.movies.domain.Movie
 import com.angelvictor.movies.ui.common.CategoryType
+import com.angelvictor.movies.usecases.RequestNowPlayingMoviesUseCase
 import com.angelvictor.movies.usecases.RequestPopularMoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -13,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BillboardViewModel @Inject constructor(
-    private val requestPopularMoviesUseCase: RequestPopularMoviesUseCase
+    private val requestPopularMoviesUseCase: RequestPopularMoviesUseCase,
+    private val requestNowPlayingMoviesUseCase: RequestNowPlayingMoviesUseCase
 ): ViewModel() {
 
     private val _moviesList = MutableLiveData<List<Movie>>()
@@ -24,7 +26,7 @@ class BillboardViewModel @Inject constructor(
         viewModelScope.launch {
             val movieList: List<Movie> = when(categoryType){
                 CategoryType.LATEST -> requestPopularMoviesUseCase()
-                CategoryType.NOW_PLAYING -> requestPopularMoviesUseCase()
+                CategoryType.NOW_PLAYING -> requestNowPlayingMoviesUseCase()
                 CategoryType.POPULAR -> requestPopularMoviesUseCase()
                 CategoryType.TOP -> requestPopularMoviesUseCase()
                 CategoryType.UPCOMING -> requestPopularMoviesUseCase()
