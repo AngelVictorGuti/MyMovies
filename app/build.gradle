@@ -23,8 +23,15 @@ android {
     }
 
     buildTypes {
+        debug{
+            minifyEnabled false
+            buildConfigField "String", "apiKey", '"206e8990592376607c6ea8c295327875"'
+            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/"'
+        }
         release {
             minifyEnabled false
+            buildConfigField "String", "apiKey", '"206e8990592376607c6ea8c295327875"'
+            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -39,21 +46,13 @@ android {
         viewBinding true
         dataBinding true
     }
-
-    sourceSets {
-        test {
-            java.srcDirs += "$projectDir/src/testShared/java"
-        }
-
-        androidTest {
-            java.srcDirs += "$projectDir/src/testShared/java"
-        }
-    }
 }
 
 dependencies {
 
+    implementation project(":data")
     implementation project(":domain")
+    implementation project(":usecases")
 
     implementation Libs.AndroidX.coreKtx
     implementation Libs.AndroidX.appCompat
