@@ -32,4 +32,15 @@ class RemoteDataSource @Inject constructor(
              emptyList()
          }
     }
+
+    override suspend fun getTopRatedMovies(): List<Movie> {
+         return try {
+             remoteService
+                 .getTopRatedMovies(apiKey)
+                 .results
+                 .toDomainModel()
+         } catch (e: Exception){
+             emptyList()
+         }
+    }
 }

@@ -17,4 +17,10 @@ interface RemoteService {
         @Query("page") page: Int = 1
     ): RemoteResult
 
+    @GET("movie/top_rated")
+    suspend fun getTopRatedMovies(
+        @Query("api_key") apiKey: String,
+        @Query("page") page: Int = 1
+    ): RemoteResult
+
 }
