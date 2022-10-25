@@ -14,4 +14,8 @@ class MoviesRepository @Inject constructor(
     suspend fun requestNowPlayingMovies(): List<Movie> {
         return remoteDataSource.getNowPlayingMovies()
     }
+
+    suspend fun requestTopRatedMovies(): List<Movie> {
+        return remoteDataSource.getTopRatedMovies()
+    }
 }
