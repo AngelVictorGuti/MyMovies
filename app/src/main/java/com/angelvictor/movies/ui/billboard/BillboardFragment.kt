@@ -25,9 +25,10 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentBillboardBinding.bind(view)
-        binding.rvBillboard.adapter = adapter
-        setupToollbar()
+        initUi()
+        setupToolbar()
         observeMovies()
+        viewModel.onUiReady(args.category.type)
     }
 
     private fun observeMovies() {
@@ -36,7 +37,11 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         }
     }
 
-    private fun setupToollbar(){
+    private fun initUi(){
+        binding.rvBillboard.adapter = adapter
+    }
+
+    private fun setupToolbar(){
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         binding.toolbar.setTitle(args.category.title)
     }
