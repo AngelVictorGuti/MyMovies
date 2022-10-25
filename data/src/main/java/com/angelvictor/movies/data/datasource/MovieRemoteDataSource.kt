@@ -6,4 +6,5 @@ interface MovieRemoteDataSource {
     suspend fun getPopularMovies(): List<Movie>
     suspend fun getNowPlayingMovies(): List<Movie>
     suspend fun getTopRatedMovies(): List<Movie>
+    suspend fun getUpcomingMovies(): List<Movie>
 }
