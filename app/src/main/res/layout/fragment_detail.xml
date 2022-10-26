@@ -132,7 +132,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/margin_m"
-                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="@id/ivMovie"
                     app:layout_constraintBottom_toBottomOf="@id/ivMovie"
                     tools:srcCompat="@drawable/ic_favorite_off"

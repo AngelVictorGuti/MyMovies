@@ -37,6 +37,12 @@
         android:name="com.angelvictor.movies.ui.detail.DetailFragment"
         android:label="DetailFragment"
         tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detail_to_home"
+            app:destination="@id/home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true" />
         <argument
             android:name="movie"
             app:argType="com.angelvictor.movies.ui.common.MovieUi"

@@ -24,31 +24,40 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailBinding.bind(view)
-        initUi()
+        observeMovie()
         setupToolbar()
+        viewModel.onUiReady(args.movie)
     }
 
-    private fun initUi() {
-        binding.apply {
-            ivMovie.loadUrl(args.movie.backdropPath)
-            ivAdultOnly.isVisible = args.movie.adult
-            tvTittleMovie.text = args.movie.originalTitle
-            starRating.numStars = ceil(args.movie.voteAverage).toInt()
-            starRating.rating = args.movie.voteAverage.toFloat()
-            starRating.isVisible = viewModel.showAverage(args.movie.voteAverage)
-            tvVoteCount.isVisible = viewModel.showAverage(args.movie.voteAverage)
-            tvVoteCount.text = args.movie.voteCount.toString()
-            tvDateMovie.text = args.movie.releaseDate
-            tvDescriptionMovie.text = args.movie.overview
-            ivFavorite.setImageResource(if (args.movie.favorite) R.drawable.ic_favorite_on else R.drawable.ic_favorite_off)
-            ivFavorite.setOnClickListener {
-                viewModel.favoriteOnClick(args.movie)
+    private fun observeMovie() {
+        viewModel.movie.observe(viewLifecycleOwner) { movie ->
+            binding.apply {
+                ivMovie.loadUrl(movie.backdropPath)
+                ivAdultOnly.isVisible = movie.adult
+                tvTittleMovie.text = movie.originalTitle
+                starRating.numStars = ceil(movie.voteAverage).toInt()
+                starRating.rating = movie.voteAverage.toFloat()
+                starRating.isVisible = viewModel.showAverage(movie.voteAverage)
+                tvVoteCount.isVisible = viewModel.showAverage(movie.voteAverage)
+                tvVoteCount.text = movie.voteCount.toString()
+                tvDateMovie.text = movie.releaseDate
+                tvDescriptionMovie.text = movie.overview
+                ivFavorite.setImageResource(if (movie.favorite) R.drawable.ic_favorite_on else R.drawable.ic_favorite_off)
+                ivFavorite.setOnClickListener {
+                    viewModel.favoriteOnClick(movie)
+                }
             }
         }
     }
 
     private fun setupToolbar() {
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbar.setNavigationOnClickListener {
+            if (viewModel.checkDatabaseIsEmpty()) {
+                findNavController().navigate(DetailFragmentDirections.actionDetailToHome())
+            } else {
+                findNavController().popBackStack()
+            }
+        }
         binding.toolbar.title = args.movie.title
     }
 
