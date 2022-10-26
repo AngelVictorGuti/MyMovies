@@ -27,5 +27,18 @@
             android:name="category"
             app:argType="com.angelvictor.movies.ui.common.Category"
             app:nullable="false" />
+        <action
+            android:id="@+id/action_billboard_dest_to_detailFragment"
+            app:destination="@id/detail_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail_dest"
+        android:name="com.angelvictor.movies.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="movie"
+            app:argType="com.angelvictor.movies.ui.common.MovieUi"
+            app:nullable="false"  />
     </fragment>
 </navigation>
