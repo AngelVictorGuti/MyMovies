@@ -7,10 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.toUiModel
-import com.angelvictor.movies.usecases.RequestNowPlayingMoviesUseCase
-import com.angelvictor.movies.usecases.RequestPopularMoviesUseCase
-import com.angelvictor.movies.usecases.RequestTopRatedMoviesUseCase
-import com.angelvictor.movies.usecases.RequestUpcomingMoviesUseCase
+import com.angelvictor.movies.usecases.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,7 +17,9 @@ class BillboardViewModel @Inject constructor(
     private val requestPopularMoviesUseCase: RequestPopularMoviesUseCase,
     private val requestNowPlayingMoviesUseCase: RequestNowPlayingMoviesUseCase,
     private val requestTopRatedMoviesUseCase: RequestTopRatedMoviesUseCase,
-    private val requestUpcomingMoviesUseCase: RequestUpcomingMoviesUseCase
+    private val requestUpcomingMoviesUseCase: RequestUpcomingMoviesUseCase,
+    private val checkMovieIsFavoriteUseCase: CheckMovieIsFavoriteUseCase,
+    private val getFavoritesMoviesUseCase: GetFavoritesMoviesUseCase
 ) : ViewModel() {
 
     private val _moviesList = MutableLiveData<List<MovieUi>>()
@@ -39,13 +38,23 @@ class BillboardViewModel @Inject constructor(
                 Category.POPULAR -> requestPopularMoviesUseCase()
                 Category.TOP -> requestTopRatedMoviesUseCase()
                 Category.UPCOMING -> requestUpcomingMoviesUseCase()
-                Category.FAVORITES -> emptyList()
-            }.toUiModel()
+                Category.FAVORITES -> getFavoritesMoviesUseCase()
+            }.map { movie ->
+                movie.toUiModel(checkMovieFavorite(movie.id, category))
+            }
 
             _moviesList.postValue(movieList)
             _loader.postValue(false)
         }
 
+    }
+
+    private suspend fun checkMovieFavorite(id: Int, category: Category): Boolean {
+        return if (category != Category.FAVORITES) {
+            checkMovieIsFavoriteUseCase(id)
+        } else {
+            true
+        }
     }
 
 }
