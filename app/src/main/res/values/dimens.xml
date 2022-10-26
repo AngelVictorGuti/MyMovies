@@ -2,6 +2,7 @@
     <dimen name="margin_xs">4dp</dimen>
     <dimen name="margin_s">8dp</dimen>
     <dimen name="margin_m">16dp</dimen>
+    <dimen name="margin_l">24dp</dimen>
 
     <dimen name="button_text_size">20sp</dimen>
     <dimen name="text_size_body1">16sp</dimen>
