@@ -28,8 +28,13 @@ class BillboardViewModel @Inject constructor(
     val moviesList: LiveData<List<MovieUi>>
         get() = _moviesList
 
+    private val _loader = MutableLiveData<Boolean>()
+    val loader: LiveData<Boolean>
+        get() = _loader
+
     fun onUiReady(categoryType: CategoryType) {
         viewModelScope.launch {
+            _loader.postValue(true)
             val movieList: List<MovieUi> = when (categoryType) {
                 CategoryType.NOW_PLAYING -> requestNowPlayingMoviesUseCase()
                 CategoryType.POPULAR -> requestPopularMoviesUseCase()
@@ -38,6 +43,7 @@ class BillboardViewModel @Inject constructor(
             }.toUiModel()
 
             _moviesList.postValue(movieList)
+            _loader.postValue(false)
         }
 
     }

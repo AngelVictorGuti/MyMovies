@@ -42,5 +42,9 @@
             tools:itemCount="10"
             tools:listitem="@layout/view_movie" />
 
+        <include android:id="@+id/frameLoader"
+            layout="@layout/frame_loader"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,6 +2,7 @@ package com.angelvictor.movies.ui.billboard
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -29,6 +30,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         initUi()
         setupToolbar()
         observeMovies()
+        observeLoader()
         viewModel.onUiReady(args.category.type)
     }
 
@@ -39,6 +41,12 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
     private fun observeMovies() {
         viewModel.moviesList.observe(viewLifecycleOwner) {
             adapter.updatemovies(it)
+        }
+    }
+
+    private fun observeLoader() {
+        viewModel.loader.observe(viewLifecycleOwner) {
+            binding.frameLoader.loading.isVisible = it
         }
     }
 
