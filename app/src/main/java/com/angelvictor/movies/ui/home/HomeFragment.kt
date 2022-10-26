@@ -26,7 +26,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding = FragmentHomeBinding.bind(view)
         binding.rvCategories.adapter = adapter
         observeCategories()
-
+        viewModel.getCategories()
     }
 
     private fun observeCategories() {
@@ -35,7 +35,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
     }
 
-    private fun openMovieList(category: Category){
+    private fun openMovieList(category: Category) {
         findNavController().navigate(HomeFragmentDirections.actionHomeToBillboard(category))
     }
 

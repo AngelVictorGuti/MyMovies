@@ -2,9 +2,7 @@ package com.angelvictor.movies.ui.common
 
 import com.angelvictor.movies.domain.Movie
 
-fun List<Movie>.toUiModel(): List<MovieUi> = map { it.toUiModel() }
-
-private fun Movie.toUiModel(): MovieUi =
+fun Movie.toUiModel(favorite: Boolean): MovieUi =
     MovieUi(
         id,
         adult,
@@ -18,5 +16,23 @@ private fun Movie.toUiModel(): MovieUi =
         popularity,
         voteAverage,
         voteCount,
-        false
+        favorite
+    )
+
+
+fun MovieUi.fromUiModel(): Movie =
+    Movie(
+        id,
+        adult,
+        title,
+        overview,
+        releaseDate,
+        posterPath,
+        backdropPath,
+        originalLanguage,
+        originalTitle,
+        popularity,
+        voteAverage,
+        voteCount,
+        favorite
     )
