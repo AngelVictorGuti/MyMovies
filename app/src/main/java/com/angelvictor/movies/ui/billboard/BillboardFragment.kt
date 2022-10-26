@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentBillboardBinding
 import com.angelvictor.movies.ui.common.MovieUi
+import com.angelvictor.movies.ui.common.toStringFromResource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,7 +32,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         setupToolbar()
         observeMovies()
         observeLoader()
-        viewModel.onUiReady(args.category.type)
+        viewModel.onUiReady(args.category)
     }
 
     private fun initUi(){
@@ -56,7 +57,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private fun setupToolbar(){
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.toolbar.setTitle(args.category.title)
+        binding.toolbar.setTitle(args.category.toStringFromResource())
     }
 
 }

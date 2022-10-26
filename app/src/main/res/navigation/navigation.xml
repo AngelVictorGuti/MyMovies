@@ -23,13 +23,14 @@
         android:name="com.angelvictor.movies.ui.billboard.BillboardFragment"
         android:label="fragment_billboard"
         tools:layout="@layout/fragment_billboard">
-        <argument
-            android:name="category"
-            app:argType="com.angelvictor.movies.ui.common.Category"
-            app:nullable="false" />
         <action
             android:id="@+id/action_billboard_dest_to_detailFragment"
             app:destination="@id/detail_dest" />
+        <argument
+            android:name="category"
+            app:argType="com.angelvictor.movies.ui.common.Category"
+            android:defaultValue="POPULAR"
+            app:nullable="false"/>
     </fragment>
     <fragment
         android:id="@+id/detail_dest"

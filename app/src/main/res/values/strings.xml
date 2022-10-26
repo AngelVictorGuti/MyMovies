@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Movies</string>
 
-    <string name="category_now_playing">Billboard</string>
+    <string name="category_now_playing">Now Playing</string>
     <string name="category_popular">Popular</string>
     <string name="category_top">Top Rated</string>
     <string name="category_upcoming">Upcoming</string>
+    <string name="category_favorites">Favorites</string>
 </resources>
