@@ -11,4 +11,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#FFF7F7F7</color>
     <color name="rating">#FFFBDF58</color>
+    <color name="colorBgLoading">#80000000</color>
 </resources>
