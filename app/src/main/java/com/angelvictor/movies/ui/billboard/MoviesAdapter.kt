@@ -6,15 +6,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.ViewMovieBinding
 import com.angelvictor.movies.domain.Movie
+import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.inflate
 import com.angelvictor.movies.ui.common.loadUrl
 
 class MoviesAdapter(
-    private var movies: List<Movie>,
-    private val onClickListener: (Movie) -> Unit
+    private var movies: List<MovieUi>,
+    private val onClickListener: (MovieUi) -> Unit
 ) : RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
-    fun updatemovies(newMovies: List<Movie>) {
+    fun updatemovies(newMovies: List<MovieUi>) {
         this.movies = newMovies
         notifyDataSetChanged()
     }
@@ -32,7 +33,7 @@ class MoviesAdapter(
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = ViewMovieBinding.bind(view)
-        fun bind(movie: Movie) {
+        fun bind(movie: MovieUi) {
             binding.apply {
                 ivMovie.loadUrl(movie.posterPath)
                 movieTitle.text = "${movie.title} ${movie.id}"

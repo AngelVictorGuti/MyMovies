@@ -1,6 +1,10 @@
-package com.angelvictor.movies.domain
+package com.angelvictor.movies.ui.common
 
-data class Movie(
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class MovieUi(
     val id: Int,
     val adult: Boolean,
     val title: String,
@@ -14,4 +18,4 @@ data class Movie(
     val voteAverage: Double,
     val voteCount: Int,
     val favorite: Boolean
-)
+): Parcelable

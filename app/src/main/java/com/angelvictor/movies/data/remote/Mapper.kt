@@ -7,6 +7,7 @@ fun List<RemoteMovie>.toDomainModel(): List<Movie> = map { it.toDomainModel() }
 private fun RemoteMovie.toDomainModel(): Movie =
     Movie(
         id,
+        adult,
         title,
         overview,
         releaseDate,
@@ -16,5 +17,6 @@ private fun RemoteMovie.toDomainModel(): Movie =
         originalTitle,
         popularity,
         voteAverage,
+        voteCount,
         false
     )

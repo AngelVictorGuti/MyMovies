@@ -9,4 +9,6 @@
     <color name="teal_900">#004D40</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#FFF7F7F7</color>
+    <color name="rating">#FFFBDF58</color>
 </resources>

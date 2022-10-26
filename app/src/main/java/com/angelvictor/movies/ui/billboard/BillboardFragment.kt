@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentBillboardBinding
+import com.angelvictor.movies.ui.common.MovieUi
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -15,8 +16,8 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private val viewModel: BillboardViewModel by viewModels()
 
-    private val adapter: MoviesAdapter = MoviesAdapter(emptyList()) {
-        //TODO Go to detail
+    private val adapter: MoviesAdapter = MoviesAdapter(emptyList()) { movie ->
+        openDetail(movie)
     }
 
     private lateinit var binding: FragmentBillboardBinding
@@ -31,14 +32,18 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         viewModel.onUiReady(args.category.type)
     }
 
+    private fun initUi(){
+        binding.rvBillboard.adapter = adapter
+    }
+
     private fun observeMovies() {
         viewModel.moviesList.observe(viewLifecycleOwner) {
             adapter.updatemovies(it)
         }
     }
 
-    private fun initUi(){
-        binding.rvBillboard.adapter = adapter
+    private fun openDetail(movie: MovieUi){
+        findNavController().navigate(BillboardFragmentDirections.actionBillboardDestToDetailFragment(movie))
     }
 
     private fun setupToolbar(){
