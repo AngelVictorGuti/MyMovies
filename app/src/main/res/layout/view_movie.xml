@@ -37,7 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@id/releaseDate"
-            tools:text="@string/category_latest" />
+            tools:text="@string/category_popular" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/releaseDate"
@@ -45,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            tools:text="@string/category_latest"
+            tools:text="@string/category_popular"
             android:padding="@dimen/margin_xs"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

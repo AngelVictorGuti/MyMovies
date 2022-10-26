@@ -7,6 +7,7 @@ import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.ViewCategoryBinding
 import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.inflate
+import com.angelvictor.movies.ui.common.toStringFromResource
 
 class CategoriesAdapter(
     private var categories: List<Category>,
@@ -32,7 +33,7 @@ class CategoriesAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = ViewCategoryBinding.bind(view)
         fun bind(category: Category) {
-            binding.categoryTitle.text = binding.categoryTitle.context.getText(category.title)
+            binding.categoryTitle.text = binding.categoryTitle.context.getText(category.toStringFromResource())
         }
     }
 

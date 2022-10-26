@@ -4,8 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.angelvictor.movies.domain.Movie
-import com.angelvictor.movies.ui.common.CategoryType
+import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.toUiModel
 import com.angelvictor.movies.usecases.RequestNowPlayingMoviesUseCase
@@ -32,14 +31,15 @@ class BillboardViewModel @Inject constructor(
     val loader: LiveData<Boolean>
         get() = _loader
 
-    fun onUiReady(categoryType: CategoryType) {
+    fun onUiReady(category: Category) {
         viewModelScope.launch {
             _loader.postValue(true)
-            val movieList: List<MovieUi> = when (categoryType) {
-                CategoryType.NOW_PLAYING -> requestNowPlayingMoviesUseCase()
-                CategoryType.POPULAR -> requestPopularMoviesUseCase()
-                CategoryType.TOP -> requestTopRatedMoviesUseCase()
-                CategoryType.UPCOMING -> requestUpcomingMoviesUseCase()
+            val movieList: List<MovieUi> = when (category) {
+                Category.NOW_PLAYING -> requestNowPlayingMoviesUseCase()
+                Category.POPULAR -> requestPopularMoviesUseCase()
+                Category.TOP -> requestTopRatedMoviesUseCase()
+                Category.UPCOMING -> requestUpcomingMoviesUseCase()
+                Category.FAVORITES -> emptyList()
             }.toUiModel()
 
             _moviesList.postValue(movieList)
