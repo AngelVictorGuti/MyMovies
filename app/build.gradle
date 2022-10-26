@@ -68,6 +68,10 @@ dependencies {
     implementation Libs.AndroidX.Navigation.fragmentKtx
     implementation Libs.AndroidX.Navigation.uiKtx
 
+    implementation Libs.AndroidX.Room.runtime
+    implementation Libs.AndroidX.Room.ktx
+    kapt Libs.AndroidX.Room.compiler
+
     implementation Libs.playServicesLocation
 
     implementation Libs.Glide.glide
