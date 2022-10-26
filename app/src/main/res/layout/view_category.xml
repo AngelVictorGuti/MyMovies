@@ -22,7 +22,7 @@
             android:lines="2"
             android:maxLines="2"
             style="@style/AppTheme.Button"
-            tools:text="@string/category_latest" />
+            tools:text="@string/category_popular" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

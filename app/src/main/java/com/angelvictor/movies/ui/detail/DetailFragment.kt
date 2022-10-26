@@ -40,6 +40,10 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             tvVoteCount.text = args.movie.voteCount.toString()
             tvDateMovie.text = args.movie.releaseDate
             tvDescriptionMovie.text = args.movie.overview
+            ivFavorite.setImageResource(if (args.movie.favorite) R.drawable.ic_favorite_on else R.drawable.ic_favorite_off)
+            ivFavorite.setOnClickListener {
+                viewModel.favoriteOnClick(args.movie)
+            }
         }
     }
 
