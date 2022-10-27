@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.angelvictor.movies.ui.common.Category
+import com.angelvictor.movies.ui.common.PermissionState
 import com.angelvictor.movies.usecases.DatabaseEmtpyUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -28,6 +29,33 @@ class HomeViewModel @Inject constructor(
                     Category.values().toList()
                 }
             )
+        }
+    }
+
+    fun onClickCategory(
+        category: Category,
+        checkPermissions: () -> Unit,
+        openNextScreen: () -> Unit
+    ) {
+        if (category != Category.FAVORITES) {
+            checkPermissions()
+        } else {
+            openNextScreen()
+        }
+    }
+
+    fun permissionsResult(
+        permissionState: PermissionState,
+        openNextScreen: () -> Unit,
+        openLocationDeniedDialog: () -> Unit
+    ) {
+        when (permissionState) {
+            PermissionState.GRANTED, PermissionState.DENIED -> {
+                openNextScreen()
+            }
+            PermissionState.EXPLAINED -> {
+                openLocationDeniedDialog()
+            }
         }
     }
 

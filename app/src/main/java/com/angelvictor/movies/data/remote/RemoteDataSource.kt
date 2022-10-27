@@ -11,10 +11,10 @@ class RemoteDataSource @Inject constructor(
 ) :
     MovieRemoteDataSource {
 
-    override suspend fun getPopularMovies(): List<Movie> {
+    override suspend fun getPopularMovies(region: String): List<Movie> {
          return try {
              remoteService
-                 .getPopularMovies(apiKey)
+                 .getPopularMovies(apiKey, region)
                  .results
                  .toDomainModel()
          } catch (e: Exception){
@@ -22,10 +22,10 @@ class RemoteDataSource @Inject constructor(
          }
     }
 
-    override suspend fun getNowPlayingMovies(): List<Movie> {
+    override suspend fun getNowPlayingMovies(region: String): List<Movie> {
          return try {
              remoteService
-                 .getNowPlayingMovies(apiKey)
+                 .getNowPlayingMovies(apiKey, region)
                  .results
                  .toDomainModel()
          } catch (e: Exception){
@@ -33,10 +33,10 @@ class RemoteDataSource @Inject constructor(
          }
     }
 
-    override suspend fun getTopRatedMovies(): List<Movie> {
+    override suspend fun getTopRatedMovies(region: String): List<Movie> {
          return try {
              remoteService
-                 .getTopRatedMovies(apiKey)
+                 .getTopRatedMovies(apiKey, region)
                  .results
                  .toDomainModel()
          } catch (e: Exception){
@@ -44,10 +44,10 @@ class RemoteDataSource @Inject constructor(
          }
     }
 
-    override suspend fun getUpcomingMovies(): List<Movie> {
+    override suspend fun getUpcomingMovies(region: String): List<Movie> {
          return try {
              remoteService
-                 .getUpcomingMovies(apiKey)
+                 .getUpcomingMovies(apiKey, region)
                  .results
                  .toDomainModel()
          } catch (e: Exception){
