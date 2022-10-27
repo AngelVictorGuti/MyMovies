@@ -7,19 +7,20 @@ import javax.inject.Inject
 
 class MoviesRepository @Inject constructor(
     private val remoteDataSource: MovieRemoteDataSource,
-    private val movieLocalDataSource: MovieLocalDataSource
+    private val movieLocalDataSource: MovieLocalDataSource,
+    private val locationRepository: LocationRepository
 ) {
 
-    suspend fun requestPopularMovies(): List<Movie> = remoteDataSource.getPopularMovies()
+    suspend fun requestPopularMovies(): List<Movie> = remoteDataSource.getPopularMovies(getRegion())
 
 
-    suspend fun requestNowPlayingMovies(): List<Movie> = remoteDataSource.getNowPlayingMovies()
+    suspend fun requestNowPlayingMovies(): List<Movie> = remoteDataSource.getNowPlayingMovies(getRegion())
 
 
-    suspend fun requestTopRatedMovies(): List<Movie> = remoteDataSource.getTopRatedMovies()
+    suspend fun requestTopRatedMovies(): List<Movie> = remoteDataSource.getTopRatedMovies(getRegion())
 
 
-    suspend fun requestUpcomingMovies(): List<Movie> = remoteDataSource.getUpcomingMovies()
+    suspend fun requestUpcomingMovies(): List<Movie> = remoteDataSource.getUpcomingMovies(getRegion())
 
 
     suspend fun getFavoriteMovies() = movieLocalDataSource.getMovies()
@@ -36,4 +37,7 @@ class MoviesRepository @Inject constructor(
             movieLocalDataSource.deleteMovie(movie)
         }
     }
+
+    private suspend fun getRegion(): String = locationRepository.findRegion()
+
 }

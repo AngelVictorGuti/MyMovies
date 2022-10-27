@@ -3,8 +3,12 @@ package com.angelvictor.movies.di
 import android.app.Application
 import androidx.room.Room
 import com.angelvictor.movies.BuildConfig
+import com.angelvictor.movies.data.AndroidPermissionChecker
+import com.angelvictor.movies.data.GoogleServicesLocationDataSource
+import com.angelvictor.movies.data.PermissionsChecker
 import com.angelvictor.movies.data.database.MovieDataSource
 import com.angelvictor.movies.data.database.MovieDatabase
+import com.angelvictor.movies.data.datasource.LocationDataSource
 import com.angelvictor.movies.data.datasource.MovieLocalDataSource
 import com.angelvictor.movies.data.datasource.MovieRemoteDataSource
 import com.angelvictor.movies.data.remote.RemoteDataSource
@@ -77,5 +81,11 @@ abstract class AppDataModule {
 
     @Binds
     abstract fun bindRemoteDataSource(remoteDataSource: RemoteDataSource): MovieRemoteDataSource
+
+    @Binds
+    abstract fun bindLocationDataSource(locationDataSource: GoogleServicesLocationDataSource): LocationDataSource
+
+    @Binds
+    abstract fun bindPermissionChecker(permissionChecker: AndroidPermissionChecker): PermissionsChecker
 
 }
