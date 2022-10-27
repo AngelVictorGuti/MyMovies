@@ -6,4 +6,11 @@
     <string name="category_top">Top Rated</string>
     <string name="category_upcoming">Upcoming</string>
     <string name="category_favorites">Favorites</string>
+
+    <string name="location_denied_title">Location</string>
+    <string name="location_denied_message">Location permission denied. If you want to know the movies in your region, you need to enable location permission. Otherwise, a list of movies will be shown by region default</string>
+    <string name="location_denied_settings">Settings</string>
+    <string name="location_denied_accept">Accept</string>
+
+
 </resources>
