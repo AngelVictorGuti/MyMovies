@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/teal_700">
+        android:background="@drawable/custom_bordered_ripple">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivMovie"
