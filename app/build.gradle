@@ -26,12 +26,12 @@ android {
         debug{
             minifyEnabled false
             buildConfigField "String", "apiKey", '"206e8990592376607c6ea8c295327875"'
-            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/"'
+            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/movie/"'
         }
         release {
             minifyEnabled false
             buildConfigField "String", "apiKey", '"206e8990592376607c6ea8c295327875"'
-            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/"'
+            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/movie/"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -80,6 +80,8 @@ dependencies {
     implementation Libs.OkHttp3.loginInterceptor
     implementation Libs.Retrofit.retrofit
     implementation Libs.Retrofit.converterGson
+
+    implementation Libs.Arrow.core
 
     implementation Libs.Hilt.android
     kapt Libs.Hilt.compiler

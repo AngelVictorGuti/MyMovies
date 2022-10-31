@@ -9,8 +9,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentBillboardBinding
+import com.angelvictor.movies.ui.common.CustomSnackbar
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.toResource
+import com.angelvictor.movies.ui.common.errorToString
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,6 +34,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         setupToolbar()
         observeMovies()
         observeLoader()
+        observeError()
         viewModel.onUiReady(args.category)
     }
 
@@ -48,6 +51,17 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
     private fun observeLoader() {
         viewModel.loader.observe(viewLifecycleOwner) {
             binding.frameLoader.loading.isVisible = it
+        }
+    }
+
+    private fun observeError() {
+        viewModel.error.observe(viewLifecycleOwner) { error ->
+            error?.let {
+                CustomSnackbar.showError(
+                    binding.coordinatorBillboard,
+                    error.errorToString(requireContext(), it)
+                ) { viewModel.onUiReady(args.category) }
+            }
         }
     }
 

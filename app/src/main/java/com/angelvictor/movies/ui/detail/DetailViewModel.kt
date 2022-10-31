@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.angelvictor.movies.domain.Error
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.fromUiModel
 import com.angelvictor.movies.usecases.ChangeMovieFavoriteUseCase
@@ -22,6 +23,10 @@ class DetailViewModel @Inject constructor(
     val movie: LiveData<MovieUi>
         get() = _movie
 
+    private val _error = MutableLiveData<Error?>()
+    val error: LiveData<Error?>
+        get() = _error
+
     private var emptyDatabase = false
 
     private val minimumAverage = 5.0
@@ -37,8 +42,9 @@ class DetailViewModel @Inject constructor(
     fun favoriteOnClick(movie: MovieUi){
         viewModelScope.launch {
             val newMovie: MovieUi = movie.copy(favorite = !movie.favorite)
-            changeMovieFavoriteUseCase(newMovie.fromUiModel())
+            val error = changeMovieFavoriteUseCase(newMovie.fromUiModel())
             _movie.postValue(newMovie)
+            _error.postValue(error)
             emptyDatabase = databaseEmtpyUseCase()
         }
     }
