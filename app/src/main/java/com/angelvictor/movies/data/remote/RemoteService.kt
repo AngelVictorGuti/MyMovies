@@ -5,28 +5,28 @@ import retrofit2.http.Query
 
 interface RemoteService {
 
-    @GET("movie/popular")
+    @GET("popular")
     suspend fun getPopularMovies(
         @Query("api_key") apiKey: String,
         @Query("region") region: String,
         @Query("page") page: Int = 1
     ): RemoteResult
 
-    @GET("movie/now_playing")
+    @GET("now_playing")
     suspend fun getNowPlayingMovies(
         @Query("api_key") apiKey: String,
         @Query("region") region: String,
         @Query("page") page: Int = 1
     ): RemoteResult
 
-    @GET("movie/top_rated")
+    @GET("top_rated")
     suspend fun getTopRatedMovies(
         @Query("api_key") apiKey: String,
         @Query("region") region: String,
         @Query("page") page: Int = 1
     ): RemoteResult
 
-    @GET("movie/upcoming")
+    @GET("upcoming")
     suspend fun getUpcomingMovies(
         @Query("api_key") apiKey: String,
         @Query("region") region: String,

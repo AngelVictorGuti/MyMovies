@@ -9,7 +9,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentDetailBinding
+import com.angelvictor.movies.ui.common.CustomSnackbar
 import com.angelvictor.movies.ui.common.loadUrl
+import com.angelvictor.movies.ui.common.errorToString
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.ceil
 
@@ -25,6 +27,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailBinding.bind(view)
         observeMovie()
+        observeError()
         setupToolbar()
         viewModel.onUiReady(args.movie)
     }
@@ -46,6 +49,17 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
                 ivFavorite.setOnClickListener {
                     viewModel.favoriteOnClick(movie)
                 }
+            }
+        }
+    }
+
+    private fun observeError() {
+        viewModel.error.observe(viewLifecycleOwner) { error ->
+            error?.let {
+                CustomSnackbar.showError(
+                    binding.coordinatorDetail,
+                    error.errorToString(requireContext(), it)
+                ) { viewModel.movie.value?.let { movie -> viewModel.favoriteOnClick(movie) } }
             }
         }
     }
