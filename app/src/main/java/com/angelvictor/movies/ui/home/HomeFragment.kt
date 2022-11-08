@@ -41,8 +41,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun observeCategories() {
-        viewModel.categoriesList.observe(viewLifecycleOwner) { categories ->
-            adapter.updateCategories(categories)
+        viewModel.homeUiState.observe(viewLifecycleOwner) { homeState ->
+            homeState.categories?.let {
+                adapter.updateCategories(it)
+            }
         }
     }
 
