@@ -42,22 +42,26 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private fun observeState() {
         viewModel.billboardState.observe(viewLifecycleOwner) { state ->
-            binding.frameLoader.loading.isVisible = state.loading == true
-            binding.rvBillboard.isVisible = state.movies != null
-            state.movies?.let {
-                adapter.updateMovies(it)
-            }
-            billboardState.showError(
-                view = binding.coordinatorBillboard,
-                error = state.error,
-                onRetryAction = { viewModel.onUiReady(args.category) }
-            )
+            updateUi(state)
         }
     }
 
     private fun setupToolbar() {
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         binding.toolbar.setTitle(args.category.toResource())
+    }
+
+    private fun updateUi(state: BillboardViewModel.UiState){
+        binding.frameLoader.loading.isVisible = state.loading == true
+        binding.rvBillboard.isVisible = state.movies != null
+        state.movies?.let {
+            adapter.updateMovies(it)
+        }
+        billboardState.showError(
+            view = binding.coordinatorBillboard,
+            error = state.error,
+            onRetryAction = { viewModel.onUiReady(args.category) }
+        )
     }
 
 }

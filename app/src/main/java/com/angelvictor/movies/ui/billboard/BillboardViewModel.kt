@@ -69,7 +69,6 @@ class BillboardViewModel @Inject constructor(
         )
     }
 
-
     data class UiState(
         val loading: Boolean? = null,
         val movies: List<MovieUi>? = null,

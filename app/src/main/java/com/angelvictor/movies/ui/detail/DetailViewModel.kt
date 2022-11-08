@@ -19,35 +19,32 @@ class DetailViewModel @Inject constructor(
     private val databaseEmtpyUseCase: DatabaseEmtpyUseCase
 ) : ViewModel() {
 
-    private val _movie = MutableLiveData<MovieUi>()
-    val movie: LiveData<MovieUi>
-        get() = _movie
 
-    private val _error = MutableLiveData<Error?>()
-    val error: LiveData<Error?>
-        get() = _error
+    private val _detailState = MutableLiveData<UiState>()
+    val detailState: LiveData<UiState>
+        get() = _detailState
 
     private val minimumAverage = 5.0
 
     fun showAverage(average: Double) = average > minimumAverage
 
-    fun onUiReady(movie: MovieUi){
+    fun onUiReady(movie: MovieUi) {
         viewModelScope.launch {
-            _movie.postValue(movie)
+            _detailState.postValue(UiState(movie = movie))
         }
     }
 
-    fun favoriteOnClick(movie: MovieUi){
+    fun favoriteOnClick(movie: MovieUi) {
         viewModelScope.launch {
             val newMovie: MovieUi = movie.copy(favorite = !movie.favorite)
             val error = changeMovieFavoriteUseCase(newMovie.fromUiModel())
-            _movie.postValue(newMovie)
-            _error.postValue(error)
+
+            _detailState.postValue(UiState(movie = newMovie, error = error))
         }
     }
 
-    fun onRetryChangeFavorite(){
-        movie.value?.let {
+    fun onRetryChangeFavorite() {
+        detailState.value?.movie?.let {
             favoriteOnClick(it)
         }
     }
@@ -55,15 +52,19 @@ class DetailViewModel @Inject constructor(
     fun onBackPressed(
         actionDatabaseIsEmpty: () -> Unit,
         actionDatabaseNotEmpty: () -> Unit
-    ){
+    ) {
         viewModelScope.launch {
-            if(databaseEmtpyUseCase()){
+            if (databaseEmtpyUseCase()) {
                 actionDatabaseIsEmpty()
-            }else{
+            } else {
                 actionDatabaseNotEmpty()
             }
         }
     }
 
+    data class UiState(
+        val movie: MovieUi? = null,
+        val error: Error? = null
+    )
 
 }
