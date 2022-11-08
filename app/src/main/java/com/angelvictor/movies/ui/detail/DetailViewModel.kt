@@ -27,8 +27,6 @@ class DetailViewModel @Inject constructor(
     val error: LiveData<Error?>
         get() = _error
 
-    private var emptyDatabase = false
-
     private val minimumAverage = 5.0
 
     fun showAverage(average: Double) = average > minimumAverage
@@ -45,11 +43,27 @@ class DetailViewModel @Inject constructor(
             val error = changeMovieFavoriteUseCase(newMovie.fromUiModel())
             _movie.postValue(newMovie)
             _error.postValue(error)
-            emptyDatabase = databaseEmtpyUseCase()
         }
     }
 
-    fun checkDatabaseIsEmpty(): Boolean = emptyDatabase
+    fun onRetryChangeFavorite(){
+        movie.value?.let {
+            favoriteOnClick(it)
+        }
+    }
+
+    fun onBackPressed(
+        actionDatabaseIsEmpty: () -> Unit,
+        actionDatabaseNotEmpty: () -> Unit
+    ){
+        viewModelScope.launch {
+            if(databaseEmtpyUseCase()){
+                actionDatabaseIsEmpty()
+            }else{
+                actionDatabaseNotEmpty()
+            }
+        }
+    }
 
 
 }

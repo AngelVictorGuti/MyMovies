@@ -2,6 +2,7 @@ package com.angelvictor.movies.ui.detail
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -9,9 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentDetailBinding
-import com.angelvictor.movies.ui.common.CustomSnackbar
 import com.angelvictor.movies.ui.common.loadUrl
-import com.angelvictor.movies.ui.common.errorToString
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.ceil
 
@@ -20,15 +19,19 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private val viewModel: DetailViewModel by viewModels()
 
+    private lateinit var detailState: DetailState
+
     private lateinit var binding: FragmentDetailBinding
     private val args: DetailFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        detailState = buildDetailState()
         binding = FragmentDetailBinding.bind(view)
         observeMovie()
         observeError()
         setupToolbar()
+        setupOnBackPressed()
         viewModel.onUiReady(args.movie)
     }
 
@@ -55,24 +58,34 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private fun observeError() {
         viewModel.error.observe(viewLifecycleOwner) { error ->
-            error?.let {
-                CustomSnackbar.showError(
-                    binding.coordinatorDetail,
-                    error.errorToString(requireContext())
-                ) { viewModel.movie.value?.let { movie -> viewModel.favoriteOnClick(movie) } }
-            }
+            detailState.showError(
+                view = binding.coordinatorDetail,
+                error = error,
+                onRetryAction = { viewModel.onRetryChangeFavorite() }
+            )
         }
     }
 
     private fun setupToolbar() {
-        binding.toolbar.setNavigationOnClickListener {
-            if (viewModel.checkDatabaseIsEmpty()) {
-                findNavController().navigate(DetailFragmentDirections.actionDetailToHome())
-            } else {
-                findNavController().popBackStack()
-            }
-        }
+        binding.toolbar.setNavigationOnClickListener { onBack() }
         binding.toolbar.title = args.movie.title
+    }
+
+    private fun setupOnBackPressed(){
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    onBack()
+                }
+            })
+    }
+
+    private fun onBack() {
+        viewModel.onBackPressed(
+            actionDatabaseIsEmpty = { detailState.openHome() },
+            actionDatabaseNotEmpty = { findNavController().popBackStack() }
+        )
     }
 
 
