@@ -9,10 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentBillboardBinding
-import com.angelvictor.movies.ui.common.CustomSnackbar
-import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.toResource
-import com.angelvictor.movies.ui.common.errorToString
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,8 +17,10 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private val viewModel: BillboardViewModel by viewModels()
 
+    private lateinit var billboardState: BillboardState
+
     private val adapter: MoviesAdapter = MoviesAdapter(emptyList()) { movie ->
-        openDetail(movie)
+        billboardState.openDetail(movie)
     }
 
     private lateinit var binding: FragmentBillboardBinding
@@ -29,6 +28,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        billboardState = buildBillboardState()
         binding = FragmentBillboardBinding.bind(view)
         initUi()
         setupToolbar()
@@ -44,7 +44,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private fun observeMovies() {
         viewModel.moviesList.observe(viewLifecycleOwner) {
-            adapter.updatemovies(it)
+            adapter.updateMovies(it)
         }
     }
 
@@ -56,17 +56,12 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private fun observeError() {
         viewModel.error.observe(viewLifecycleOwner) { error ->
-            error?.let {
-                CustomSnackbar.showError(
-                    binding.coordinatorBillboard,
-                    error.errorToString(requireContext(), it)
-                ) { viewModel.onUiReady(args.category) }
-            }
+            billboardState.showError(
+                view = binding.coordinatorBillboard,
+                error = error,
+                onRetryAction = { viewModel.onUiReady(args.category) }
+            )
         }
-    }
-
-    private fun openDetail(movie: MovieUi){
-        findNavController().navigate(BillboardFragmentDirections.actionBillboardDestToDetailFragment(movie))
     }
 
     private fun setupToolbar() {
