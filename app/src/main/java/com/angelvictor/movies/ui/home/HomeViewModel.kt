@@ -16,18 +16,20 @@ class HomeViewModel @Inject constructor(
     private val databaseEmtpyUseCase: DatabaseEmtpyUseCase
 ) : ViewModel() {
 
-    private val _categoriesList = MutableLiveData<List<Category>>()
-    val categoriesList: LiveData<List<Category>>
-        get() = _categoriesList
+    private val _homeUiState = MutableLiveData<UiState>()
+    val homeUiState: LiveData<UiState>
+        get() = _homeUiState
 
     fun getCategories() {
         viewModelScope.launch {
-            _categoriesList.postValue(
-                if (databaseEmtpyUseCase()) {
-                    Category.values().toList().filter { it != Category.FAVORITES }
-                } else {
-                    Category.values().toList()
-                }
+            _homeUiState.postValue(
+                UiState(
+                    if (databaseEmtpyUseCase()) {
+                        Category.values().toList().filter { it != Category.FAVORITES }
+                    } else {
+                        Category.values().toList()
+                    }
+                )
             )
         }
     }
@@ -58,5 +60,9 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    data class UiState(
+        val categories: List<Category>? = null
+    )
 
 }
