@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.angelvictor.movies.data.toError
 import com.angelvictor.movies.domain.Error
 import com.angelvictor.movies.domain.Movie
 import com.angelvictor.movies.ui.common.Category
@@ -25,46 +24,24 @@ class BillboardViewModel @Inject constructor(
     private val getFavoritesMoviesUseCase: GetFavoritesMoviesUseCase
 ) : ViewModel() {
 
-    private val _moviesList = MutableLiveData<List<MovieUi>>()
-    val moviesList: LiveData<List<MovieUi>>
-        get() = _moviesList
-
-    private val _loader = MutableLiveData<Boolean>()
-    val loader: LiveData<Boolean>
-        get() = _loader
-
-    private val _error = MutableLiveData<Error?>()
-    val error: LiveData<Error?>
-        get() = _error
+    private val _billboardState = MutableLiveData<UiState>()
+    val billboardState: LiveData<UiState>
+        get() = _billboardState
 
     fun onUiReady(category: Category) {
         viewModelScope.launch {
-            _loader.postValue(true)
-            when (category) {
-                Category.NOW_PLAYING -> requestNowPlayingMoviesUseCase.invoke().fold(
-                    ifLeft = { error -> onErrorCallApi(error) },
-                    ifRight = { list -> onSuccessCallApi(category, list) }
-                )
-
-                Category.POPULAR ->
-                    requestPopularMoviesUseCase.invoke().fold(
-                        ifLeft = { error -> onErrorCallApi(error) },
-                        ifRight = { list -> onSuccessCallApi(category, list) }
-                    )
-
-                Category.TOP -> requestTopRatedMoviesUseCase.invoke().fold(
-                    ifLeft = { error -> onErrorCallApi(error) },
-                    ifRight = { list -> onSuccessCallApi(category, list) }
-                )
-                Category.UPCOMING -> requestUpcomingMoviesUseCase.invoke().fold(
-                    ifLeft = { error -> onErrorCallApi(error) },
-                    ifRight = { list -> onSuccessCallApi(category, list) }
-                )
-                Category.FAVORITES -> getFavoritesMoviesUseCase.invoke().fold(
-                    ifLeft = { error -> onErrorCallApi(error) },
-                    ifRight = { list -> onSuccessCallApi(category, list) }
-                )
+            _billboardState.postValue(UiState(loading = true))
+            val result = when (category) {
+                Category.NOW_PLAYING -> requestNowPlayingMoviesUseCase.invoke()
+                Category.POPULAR -> requestPopularMoviesUseCase.invoke()
+                Category.TOP -> requestTopRatedMoviesUseCase.invoke()
+                Category.UPCOMING -> requestUpcomingMoviesUseCase.invoke()
+                Category.FAVORITES -> getFavoritesMoviesUseCase.invoke()
             }
+            result.fold(
+                ifLeft = { error -> onErrorCallApi(error) },
+                ifRight = { list -> onSuccessCallApi(category, list) }
+            )
         }
 
     }
@@ -81,13 +58,21 @@ class BillboardViewModel @Inject constructor(
         val newList = movieList.map { movie ->
             movie.toUiModel(checkMovieFavorite(movie.id, category))
         }
-        _moviesList.postValue(newList)
-        _loader.postValue(false)
+        _billboardState.postValue(
+            UiState(loading = false, movies = newList)
+        )
     }
 
     private fun onErrorCallApi(error: Error) {
-        _error.postValue(error)
-        _loader.postValue(false)
+        _billboardState.postValue(
+            UiState(loading = false, error = error)
+        )
     }
 
+
+    data class UiState(
+        val loading: Boolean? = null,
+        val movies: List<MovieUi>? = null,
+        val error: Error? = null
+    )
 }
