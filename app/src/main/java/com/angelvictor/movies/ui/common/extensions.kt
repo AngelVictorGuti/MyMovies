@@ -40,10 +40,10 @@ fun Category.toResource(): Int {
     }
 }
 
-fun Error.errorToString(context: Context, error: Error): String {
-    return when (error) {
+fun Error.errorToString(context: Context): String {
+    return when (this) {
         is Error.Connectivity -> context.getString(R.string.connectivity_error)
-        is Error.Server -> context.getString(R.string.server_error, error.code)
-        is Error.Unknown -> context.getString(R.string.unknown_error, error.message)
+        is Error.Server -> context.getString(R.string.server_error, this.code)
+        is Error.Unknown -> context.getString(R.string.unknown_error, this.message)
     }
 }

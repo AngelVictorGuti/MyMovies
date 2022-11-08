@@ -58,7 +58,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             error?.let {
                 CustomSnackbar.showError(
                     binding.coordinatorDetail,
-                    error.errorToString(requireContext(), it)
+                    error.errorToString(requireContext())
                 ) { viewModel.movie.value?.let { movie -> viewModel.favoriteOnClick(movie) } }
             }
         }
