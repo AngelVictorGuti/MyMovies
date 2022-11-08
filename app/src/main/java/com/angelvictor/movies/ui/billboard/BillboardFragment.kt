@@ -32,9 +32,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         binding = FragmentBillboardBinding.bind(view)
         initUi()
         setupToolbar()
-        observeMovies()
-        observeLoader()
-        observeError()
+        observeState()
         viewModel.onUiReady(args.category)
     }
 
@@ -42,23 +40,16 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         binding.rvBillboard.adapter = adapter
     }
 
-    private fun observeMovies() {
-        viewModel.moviesList.observe(viewLifecycleOwner) {
-            adapter.updateMovies(it)
-        }
-    }
-
-    private fun observeLoader() {
-        viewModel.loader.observe(viewLifecycleOwner) {
-            binding.frameLoader.loading.isVisible = it
-        }
-    }
-
-    private fun observeError() {
-        viewModel.error.observe(viewLifecycleOwner) { error ->
+    private fun observeState() {
+        viewModel.billboardState.observe(viewLifecycleOwner) { state ->
+            binding.frameLoader.loading.isVisible = state.loading == true
+            binding.rvBillboard.isVisible = state.movies != null
+            state.movies?.let {
+                adapter.updateMovies(it)
+            }
             billboardState.showError(
                 view = binding.coordinatorBillboard,
-                error = error,
+                error = state.error,
                 onRetryAction = { viewModel.onUiReady(args.category) }
             )
         }
