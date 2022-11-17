@@ -66,6 +66,10 @@ object Libs {
                 private const val version="3.5.0"
                 const val contrib = "androidx.test.espresso:espresso-contrib:$version"
             }
+            object CoreTesting{
+                private const val version="2.1.0"
+                const val test = "androidx.arch.core:core-testing:$version"
+            }
         }
     }
 
