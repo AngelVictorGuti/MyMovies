@@ -30,7 +30,7 @@ class BillboardViewModel @Inject constructor(
 
     fun onUiReady(category: Category) {
         viewModelScope.launch {
-            _billboardState.postValue(UiState(loading = true))
+            showLoading()
             val result = when (category) {
                 Category.NOW_PLAYING -> requestNowPlayingMoviesUseCase.invoke()
                 Category.POPULAR -> requestPopularMoviesUseCase.invoke()
@@ -44,6 +44,10 @@ class BillboardViewModel @Inject constructor(
             )
         }
 
+    }
+
+    fun showLoading(){
+        _billboardState.postValue(UiState(loading = true))
     }
 
     private suspend fun checkMovieFavorite(id: Int, category: Category): Boolean {
