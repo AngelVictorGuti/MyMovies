@@ -2,7 +2,7 @@ package com.angelvictor.movies.ui.detail
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.angelvictor.movies.CoroutinesTestRule
+import com.angelvictor.movies.testrules.CoroutinesTestRule
 import com.angelvictor.movies.domain.Error
 import com.angelvictor.movies.sampleMovie
 import com.angelvictor.movies.ui.common.toUiModel
