@@ -3,7 +3,7 @@ package com.angelvictor.movies.ui.billboard
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import arrow.core.right
-import com.angelvictor.movies.CoroutinesTestRule
+import com.angelvictor.movies.testrules.CoroutinesTestRule
 import com.angelvictor.movies.sampleMovie
 import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.toUiModel

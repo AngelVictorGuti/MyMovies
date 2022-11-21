@@ -1,7 +1,7 @@
 package com.angelvictor.movies.ui.home
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.angelvictor.movies.CoroutinesTestRule
+import com.angelvictor.movies.testrules.CoroutinesTestRule
 import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.usecases.DatabaseEmtpyUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -1,4 +1,4 @@
-package com.angelvictor.movies
+package com.angelvictor.movies.testrules
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
