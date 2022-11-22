@@ -27,35 +27,3 @@ class MovieDataSource @Inject constructor(private val movieDao: MovieDao) : Movi
     }
 }
 
-private fun MovieT.toDomainModel(): Movie =
-    Movie(
-        id,
-        adult,
-        title,
-        overview,
-        releaseDate,
-        posterPath,
-        backdropPath,
-        originalLanguage,
-        originalTitle,
-        popularity,
-        voteAverage,
-        voteCount,
-        favorite
-    )
-
-fun Movie.fromDomainModel(): MovieT = MovieT(
-    id,
-    adult,
-    title,
-    overview,
-    releaseDate,
-    posterPath,
-    backdropPath,
-    originalLanguage,
-    originalTitle,
-    popularity,
-    voteAverage,
-    voteCount,
-    favorite
-)
