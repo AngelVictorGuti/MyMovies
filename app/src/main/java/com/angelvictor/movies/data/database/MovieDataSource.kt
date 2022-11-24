@@ -19,7 +19,7 @@ class MovieDataSource @Inject constructor(private val movieDao: MovieDao) : Movi
         movieDao.checkMovieIsFavorite(id) ?: false
 
     override suspend fun saveMovie(movie: Movie): Error? = safeCall {
-        movieDao.insertMovies(movie.fromDomainModel())
+        movieDao.insertMovie(movie.fromDomainModel())
     }
 
     override suspend fun deleteMovie(movie: Movie): Error? = safeCall {

@@ -47,8 +47,8 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
     }
 
     private fun setupToolbar() {
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.toolbar.setTitle(args.category.toResource())
+        binding.toolbarBillboard.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbarBillboard.setTitle(args.category.toResource())
     }
 
     private fun updateUi(state: BillboardViewModel.UiState){
