@@ -72,8 +72,8 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     }
 
     private fun setupToolbar() {
-        binding.toolbar.setNavigationOnClickListener { onBack() }
-        binding.toolbar.title = args.movie.title
+        binding.toolbarDetail.setNavigationOnClickListener { onBack() }
+        binding.toolbarDetail.title = args.movie.title
     }
 
     private fun setupOnBackPressed() {
