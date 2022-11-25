@@ -1,0 +1,386 @@
+{
+  "dates": {
+    "maximum": "2022-12-20",
+    "minimum": "2022-12-01"
+  },
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/198vrF8k7mfQ4FjDJsBmdQcaiyq.jpg",
+      "genre_ids": [
+        878,
+        28,
+        12
+      ],
+      "id": 76600,
+      "original_language": "en",
+      "original_title": "Avatar: The Way of Water",
+      "overview": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+      "popularity": 755.362,
+      "poster_path": "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+      "release_date": "2022-12-16",
+      "title": "Avatar: The Way of Water",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/GFq9kYUnpRCnlbIbjPzNA96e0j.jpg",
+      "genre_ids": [
+        35,
+        27,
+        53
+      ],
+      "id": 593643,
+      "original_language": "en",
+      "original_title": "The Menu",
+      "overview": "A couple travels to a coastal island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.",
+      "popularity": 995.646,
+      "poster_path": "/3R3dopFTwneJVPW3ubcrnoPfI05.jpg",
+      "release_date": "2022-12-02",
+      "title": "The Menu",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 166
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6mEYUYdkKoVCMeYf3rTFj0L1uyv.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 899112,
+      "original_language": "en",
+      "original_title": "Violent Night",
+      "overview": "When a team of mercenaries breaks into a wealthy family compound on Christmas Eve, taking everyone inside hostage, the team isn’t prepared for a surprise combatant: Santa Claus is on the grounds, and he’s about to show why this Nick is no saint.",
+      "popularity": 70.686,
+      "poster_path": "/nhXjUvOvq7rJlvJFCrZMUUJ9Mn0.jpg",
+      "release_date": "2022-12-02",
+      "title": "Violent Night",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4jdduww9j5RyzO4ITRcuBFhqNN1.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 965150,
+      "original_language": "en",
+      "original_title": "Aftersun",
+      "overview": "11-year-old Sophie takes a summer vacation to Turkey with her loving and idealistic father, Calum. Twenty years later, she reminisces about the experience and reflects on their relationship – and the parts of him she wasn't able to know.",
+      "popularity": 33.39,
+      "poster_path": "/jeXmhP2zbUkREMRqFOYIwQOk49T.jpg",
+      "release_date": "2022-12-16",
+      "title": "Aftersun",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 38
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/Aqldsq65Nj1KAkQD2MzkZsAk5N5.jpg",
+      "genre_ids": [
+        28,
+        53,
+        18
+      ],
+      "id": 846433,
+      "original_language": "en",
+      "original_title": "The Enforcer",
+      "overview": "A noir thriller set in Miami, the film follows an enforcer who discovers his femme fatale boss has branched out into cyber sex trafficking, putting a young runaway he’s befriended at risk. He sacrifices everything to save the young girl from the deadly organization he’s spent his life building.",
+      "popularity": 20.306,
+      "poster_path": "/pXC8JJbfnRWtbD8i2yKFqqWEO4X.jpg",
+      "release_date": "2022-12-09",
+      "title": "The Enforcer",
+      "video": false,
+      "vote_average": 6,
+      "vote_count": 28
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/khRV3P4TrMZbKoeZcitubTyR6fr.jpg",
+      "genre_ids": [
+        27,
+        80,
+        28
+      ],
+      "id": 931954,
+      "original_language": "es",
+      "original_title": "Venus",
+      "overview": "After being caught stealing from her employers, club dancer Lucía seeks shelter with her estranged sister and niece in the Venus, a decrepit apartment complex on the outskirts of Madrid. Soon, Lucía discovers the apartment complex harbors a dark secret threatening to reveal itself after an unexpected solar eclipse.",
+      "popularity": 21.424,
+      "poster_path": "/yGpJbft7JQpQHHHasRr4wWdVcuJ.jpg",
+      "release_date": "2022-12-02",
+      "title": "Venus",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lRJ2WyhM2m7CpAfyNWza6willUw.jpg",
+      "genre_ids": [
+        35,
+        10751
+      ],
+      "id": 892068,
+      "original_language": "es",
+      "original_title": "A todo tren: Ahora son Ella2",
+      "overview": "A year ago Ricardo (Santiago Segura) and Felipe (Leo Harlem), in charge of taking the children to a camp, stayed outside the train leaving the children inside. Clara (Paz Vega) no longer trusts them and this year she decides to take the children personally with the help of her friend Susana (Paz Padilla). However, now they will be the ones who, as a result of an accident, are separated from the children. Sequel to 'A full train. Destination Asturias'.",
+      "popularity": 25.371,
+      "poster_path": "/cIiADRt9KGEqYy1293BBBm2IQG.jpg",
+      "release_date": "2022-12-02",
+      "title": "A todo tren: Ahora son Ella2",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/p9R163gjE6Z5g4eWY1qnvU4vbW2.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 888321,
+      "original_language": "de",
+      "original_title": "Corsage",
+      "overview": "Set in the 19th century, the last year in the life of Empress Elisabeth of Austria is reimagined",
+      "popularity": 17.878,
+      "poster_path": "/dWvkUmd6EfYKJvpaw3kqwBLQ8jg.jpg",
+      "release_date": "2022-12-02",
+      "title": "Corsage",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 16
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9rLV4UhGvrz4cLqeQfYTGyDSg70.jpg",
+      "genre_ids": [
+        16,
+        10751
+      ],
+      "id": 893366,
+      "original_language": "fr",
+      "original_title": "Le Petit Nicolas - Qu’est-ce qu’on attend pour être heureux ?",
+      "overview": "Somewhere between Montmartre and Saint-Germain-des-Prés, Jean-Jacques Sempé and René Goscinny lean over a large white sheet of paper and bring to life a mischievous and endearing boy, Little Nicolas. From schoolyard games and fights, to summer camp pranks and camaraderie, Nicolas lives a merry and enriching childhood.",
+      "popularity": 5.829,
+      "poster_path": "/rQYND53jknskhFL0pGuG96mZY0q.jpg",
+      "release_date": "2022-12-02",
+      "title": "Little Nicholas",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 22
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+
+      ],
+      "id": 1046722,
+      "original_language": "es",
+      "original_title": "Fácil",
+      "overview": "",
+      "popularity": 4.587,
+      "poster_path": "/Fqa0hus30nGVOu9466IFtB51jX.jpg",
+      "release_date": "2022-12-01",
+      "title": "Fácil",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        99
+      ],
+      "id": 1024288,
+      "original_language": "es",
+      "original_title": "Kepa Junkera Berpiztu",
+      "overview": "Kepa Junkera left the stage on 6 December 2018 in Ghent, Belgium. He disappeared, his accordion fell silent. The news mentioned a stroke, urgent admission to hospital, a recovery process, and then nothing. The Basque artist who took the trikitixa and popular Basque music to the highest level, who pretty much brought out an album a year for the 32 years of his career, the self-taught man who became the most international Basque musician and who invited artists all over the world to sing in Basque disappeared without trace. Later came two years of hard work, of physiotherapy sessions to recover his physical mobility, learn to talk, move his hands, turn his head, eat, stay alive. Because Kepa continues to live, continues to create, to enjoy the thrill of art, of music, of poetry, of painting, of photography. This documentary is the story of that emotion.",
+      "popularity": 3.573,
+      "poster_path": null,
+      "release_date": "2022-12-02",
+      "title": "Kepa Junkera Come to Life Again",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        18
+      ],
+      "id": 1045816,
+      "original_language": "ca",
+      "original_title": "El Xiuxiueig",
+      "overview": "Summer camp. Èlia and Nil kiss for the first time. They are the first campers, from all boys and girsl, to ever kiss. Suddenly the camp fills with an atmosphere of curiosity, discovery and enthusiams.",
+      "popularity": 4.869,
+      "poster_path": null,
+      "release_date": "2022-12-02",
+      "title": "El Xiuxiueig",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/hVmvHolPpaurftLlKGTHs67xLHY.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 760158,
+      "original_language": "es",
+      "original_title": "Mantícora",
+      "overview": "Julián is a successful video-game designer whose life is plagued by a dark secret. But when Diana pops up in his life, the man will feel as though a chance at happiness is within his grasp.",
+      "popularity": 3.382,
+      "poster_path": "/zjjQksxvBFDkraifSGzft9j6MXo.jpg",
+      "release_date": "2022-12-09",
+      "title": "Manticore",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/os1kq28Vp9u6HgExJ86O2d5MVeN.jpg",
+      "genre_ids": [
+        35,
+        10749
+      ],
+      "id": 960057,
+      "original_language": "fr",
+      "original_title": "Maria rêve",
+      "overview": "Maria a cleaning lady, who is reserved, shy and clumsy. When she is assigned to the School of Fine Arts, she meets Hubert, the school's whimsical guardian. There she discovers a fascinating place where freedom, creativity and daring reign.",
+      "popularity": 1.808,
+      "poster_path": "/yGoQuaW00JhM3PxLxEjghi3SiR5.jpg",
+      "release_date": "2022-12-16",
+      "title": "Maria rêve",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        99
+      ],
+      "id": 1007644,
+      "original_language": "ca",
+      "original_title": "El sostre groc",
+      "overview": "In 2018, a group of nine women filed a complaint against two of their teachers at Lleida’s Theatre School for sexual abuse carried out between 2001 and 2008, when they were teenagers. It was too late. Due to fear, embarrassment, because they took so long to understand and digest what had happened, the complaint arrived when the statute of limitations had expired and the case had been closed. What they didn’t know is that, despite the statute of limitations having expired, their statements were opening a new door where, perhaps, all was not lost.",
+      "popularity": 2.585,
+      "poster_path": "/5pVIQxY1jglfpMY8Wq2wohAFOxG.jpg",
+      "release_date": "2022-12-16",
+      "title": "The Yellow Ceiling",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+
+      ],
+      "id": 1038130,
+      "original_language": "es",
+      "original_title": "Con los años que me quedan",
+      "overview": "",
+      "popularity": 3.029,
+      "poster_path": "/vAZSq84sF9nNov1ZJBYTarSpDog.jpg",
+      "release_date": "2022-12-09",
+      "title": "Con los años que me quedan",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ol2uNjal2zBgD2KxvBbXlK8jRPJ.jpg",
+      "genre_ids": [
+        27,
+        18
+      ],
+      "id": 1023156,
+      "original_language": "gl",
+      "original_title": "O Corpo Aberto",
+      "overview": "1909. Miguel, a young teacher, is destined for a small mountain town on the border between Spain and Portugal: Lobosandaus, an inhospitable place, inhabited by distant people with remote traditions. It doesn't seem like the ideal place for someone like Miguel, who is determined to spread light and knowledge among his students. But reason cannot overpower desire, and as winter progresses, Miguel feels the darkness take over everything around him while his fascination with the enigmatic Dorinda grows. The unexpected death of an inhabitant will have a big impact on the city and will open the doors to a strange and ghostly presence.",
+      "popularity": 3.305,
+      "poster_path": "/5l6EoZnqDkPd30obu2npHp1YvSJ.jpg",
+      "release_date": "2022-12-09",
+      "title": "The Open Body",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        18
+      ],
+      "id": 840789,
+      "original_language": "es",
+      "original_title": "Matadero",
+      "overview": "An American filmmaker arrives in the Argentinian pampa to film Matadero: a founding narrative of class struggle where a group of laborers slaughter their bosses like cattle. It is 1974, the violent persecution of the left has just begun in Argentina, and the young actors in the film are on the verge of taking a leap into full time clandestine militancy.",
+      "popularity": 2.181,
+      "poster_path": "/8YHXvW1GWEcXAZXXSHfTsaGi4i2.jpg",
+      "release_date": "2022-12-09",
+      "title": "Matadero",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fTpAy2ezHI4CV8loxX4DiPtaDXz.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 660327,
+      "original_language": "fr",
+      "original_title": "Petite fleur",
+      "overview": "\"Drinking, dancing and... killing me. It's the new life my neighbour Jose has decided to live. What better way to escape boredom than coming to kill me every thursday? His wife, Lucie, prefers to go to a shrink. To each their own therapy.",
+      "popularity": 2.517,
+      "poster_path": "/lMO0n5CAMRftZGebjTCXmufuJiZ.jpg",
+      "release_date": "2022-12-09",
+      "title": "15 Ways to Kill Your Neighbour",
+      "video": false,
+      "vote_average": 5.5,
+      "vote_count": 15
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/64TNtr7x8mWZ6fVYEgBugf7Awyk.jpg",
+      "genre_ids": [
+        16,
+        10751
+      ],
+      "id": 557499,
+      "original_language": "zh",
+      "original_title": "美食大冒险之英雄烩",
+      "overview": "Super Bao, an innocent and passionate steamed stuffed bun, goes through untold hardships and finally grows into a great hero who saves the food world.",
+      "popularity": 1.302,
+      "poster_path": "/x6buudUgQkcUE4w4Z3JDZJSqoUE.jpg",
+      "release_date": "2022-12-02",
+      "title": "Kung Food",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 1
+    }
+  ],
+  "total_pages": 2,
+  "total_results": 23
+}
