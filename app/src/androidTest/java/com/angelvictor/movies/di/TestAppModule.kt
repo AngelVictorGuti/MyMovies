@@ -31,7 +31,7 @@ object TestAppModule {
     @Provides
     @Singleton
     @ApiUrl
-    fun provideApiUrl(): String = BuildConfig.baseUrl
+    fun provideApiUrl(): String = "http://localhost:8080"
 
     @Provides
     @Singleton
