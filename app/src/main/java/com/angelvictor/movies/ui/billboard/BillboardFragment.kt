@@ -20,7 +20,7 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
     private lateinit var billboardState: BillboardState
 
     private val adapter: MoviesAdapter = MoviesAdapter(emptyList()) { movie ->
-        billboardState.openDetail(movie)
+        billboardState.openDetail(movie, args.category)
     }
 
     private lateinit var binding: FragmentBillboardBinding

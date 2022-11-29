@@ -88,6 +88,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private fun onBack() {
         viewModel.onBackPressed(
+            category = args.category,
             actionDatabaseIsEmpty = { detailState.openHome() },
             actionDatabaseNotEmpty = { findNavController().popBackStack() }
         )
