@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.angelvictor.movies.domain.Error
+import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.CustomSnackbar
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.errorToString
@@ -20,8 +21,8 @@ class BillboardState(
     private val navController: NavController
 ) {
 
-    fun openDetail(movie: MovieUi) {
-        navController.navigate(BillboardFragmentDirections.actionBillboardDestToDetailFragment(movie))
+    fun openDetail(movie: MovieUi, category: Category) {
+        navController.navigate(BillboardFragmentDirections.actionBillboardDestToDetailFragment(movie, category))
     }
 
     fun showError(view: View, error: Error?, onRetryAction: () -> Unit) {

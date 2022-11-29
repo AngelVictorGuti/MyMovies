@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.angelvictor.movies.domain.Error
+import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.fromUiModel
 import com.angelvictor.movies.usecases.ChangeMovieFavoriteUseCase
@@ -50,11 +51,12 @@ class DetailViewModel @Inject constructor(
     }
 
     fun onBackPressed(
+        category: Category,
         actionDatabaseIsEmpty: () -> Unit,
         actionDatabaseNotEmpty: () -> Unit
     ) {
         viewModelScope.launch {
-            if (databaseEmtpyUseCase()) {
+            if (category == Category.FAVORITES && databaseEmtpyUseCase()) {
                 actionDatabaseIsEmpty()
             } else {
                 actionDatabaseNotEmpty()
