@@ -10,7 +10,6 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.rule.GrantPermissionRule
 import com.angelvictor.movies.R
-import com.angelvictor.movies.data.database.MovieDao
 import com.angelvictor.movies.data.remote.RemoteDataSource
 import com.angelvictor.movies.data.server.MockWebServerRule
 import com.angelvictor.movies.data.server.fromJson
@@ -48,9 +47,6 @@ class HomeInstrumentationTest {
 
     @get:Rule(order = 3)
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
-
-    @Inject
-    lateinit var movieDao: MovieDao
 
     @Inject
     lateinit var okHttpClient: OkHttpClient
