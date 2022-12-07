@@ -12,5 +12,11 @@
     <string name="location_denied_settings">Settings</string>
     <string name="location_denied_accept">Accept</string>
 
+    <string name="error_dialog_title">ERROR</string>
+    <string name="error_dialog_retry">Retry</string>
+    <string name="connectivity_error">No internet connection</string>
+    <string name="server_error">Server error %s</string>
+    <string name="unknown_error">Unexpected error has occurred %s</string>
+
 
 </resources>

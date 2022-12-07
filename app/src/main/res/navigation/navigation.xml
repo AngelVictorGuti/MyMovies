@@ -47,5 +47,10 @@
             android:name="movie"
             app:argType="com.angelvictor.movies.ui.common.MovieUi"
             app:nullable="false"  />
+        <argument
+            android:name="category"
+            app:argType="com.angelvictor.movies.ui.common.Category"
+            android:defaultValue="POPULAR" />
+
     </fragment>
 </navigation>

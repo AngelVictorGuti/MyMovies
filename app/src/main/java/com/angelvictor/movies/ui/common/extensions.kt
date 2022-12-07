@@ -1,6 +1,7 @@
 package com.angelvictor.movies.ui.common
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.LayoutRes
 import com.angelvictor.movies.R
+import com.angelvictor.movies.domain.Error
 import com.bumptech.glide.Glide
 
 fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = true): View =
@@ -35,5 +37,13 @@ fun Category.toResource(): Int {
         Category.TOP -> R.string.category_top
         Category.UPCOMING -> R.string.category_upcoming
         Category.FAVORITES -> R.string.category_favorites
+    }
+}
+
+fun Error.errorToString(context: Context): String {
+    return when (this) {
+        is Error.Connectivity -> context.getString(R.string.connectivity_error)
+        is Error.Server -> context.getString(R.string.server_error, this.code)
+        is Error.Unknown -> context.getString(R.string.unknown_error, this.message)
     }
 }

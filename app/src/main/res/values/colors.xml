@@ -12,4 +12,5 @@
     <color name="gray">#FFF7F7F7</color>
     <color name="rating">#FFFBDF58</color>
     <color name="colorBgLoading">#80000000</color>
+    <color name="error">#FFFF0000</color>
 </resources>

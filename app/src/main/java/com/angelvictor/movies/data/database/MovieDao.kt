@@ -16,7 +16,7 @@ interface MovieDao {
     suspend fun checkMovieIsFavorite(id: Int): Boolean?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovies(movie: MovieT)
+    suspend fun insertMovie(movie: MovieT)
 
     @Delete
     suspend fun deleteMovie(movie: MovieT)

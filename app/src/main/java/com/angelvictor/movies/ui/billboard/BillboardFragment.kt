@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentBillboardBinding
-import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.toResource
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,8 +17,10 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     private val viewModel: BillboardViewModel by viewModels()
 
+    private lateinit var billboardState: BillboardState
+
     private val adapter: MoviesAdapter = MoviesAdapter(emptyList()) { movie ->
-        openDetail(movie)
+        billboardState.openDetail(movie, args.category)
     }
 
     private lateinit var binding: FragmentBillboardBinding
@@ -27,11 +28,11 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        billboardState = buildBillboardState()
         binding = FragmentBillboardBinding.bind(view)
         initUi()
         setupToolbar()
-        observeMovies()
-        observeLoader()
+        observeState()
         viewModel.onUiReady(args.category)
     }
 
@@ -39,25 +40,28 @@ class BillboardFragment : Fragment(R.layout.fragment_billboard) {
         binding.rvBillboard.adapter = adapter
     }
 
-    private fun observeMovies() {
-        viewModel.moviesList.observe(viewLifecycleOwner) {
-            adapter.updatemovies(it)
+    private fun observeState() {
+        viewModel.billboardState.observe(viewLifecycleOwner) { state ->
+            updateUi(state)
         }
-    }
-
-    private fun observeLoader() {
-        viewModel.loader.observe(viewLifecycleOwner) {
-            binding.frameLoader.loading.isVisible = it
-        }
-    }
-
-    private fun openDetail(movie: MovieUi){
-        findNavController().navigate(BillboardFragmentDirections.actionBillboardDestToDetailFragment(movie))
     }
 
     private fun setupToolbar() {
-        binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.toolbar.setTitle(args.category.toResource())
+        binding.toolbarBillboard.setNavigationOnClickListener { findNavController().popBackStack() }
+        binding.toolbarBillboard.setTitle(args.category.toResource())
+    }
+
+    private fun updateUi(state: BillboardViewModel.UiState){
+        binding.frameLoader.loading.isVisible = state.loading == true
+        binding.rvBillboard.isVisible = state.movies != null
+        state.movies?.let {
+            adapter.updateMovies(it)
+        }
+        billboardState.showError(
+            view = binding.coordinatorBillboard,
+            error = state.error,
+            onRetryAction = { viewModel.onUiReady(args.category) }
+        )
     }
 
 }

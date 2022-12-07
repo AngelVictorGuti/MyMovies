@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.angelvictor.movies.domain.Error
+import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.fromUiModel
 import com.angelvictor.movies.usecases.ChangeMovieFavoriteUseCase
@@ -18,32 +20,53 @@ class DetailViewModel @Inject constructor(
     private val databaseEmtpyUseCase: DatabaseEmtpyUseCase
 ) : ViewModel() {
 
-    private val _movie = MutableLiveData<MovieUi>()
-    val movie: LiveData<MovieUi>
-        get() = _movie
 
-    private var emptyDatabase = false
+    private val _detailState = MutableLiveData<UiState>()
+    val detailState: LiveData<UiState>
+        get() = _detailState
 
     private val minimumAverage = 5.0
 
     fun showAverage(average: Double) = average > minimumAverage
 
-    fun onUiReady(movie: MovieUi){
+    fun onUiReady(movie: MovieUi) {
         viewModelScope.launch {
-            _movie.postValue(movie)
+            _detailState.postValue(UiState(movie = movie))
         }
     }
 
-    fun favoriteOnClick(movie: MovieUi){
+    fun favoriteOnClick(movie: MovieUi) {
         viewModelScope.launch {
             val newMovie: MovieUi = movie.copy(favorite = !movie.favorite)
-            changeMovieFavoriteUseCase(newMovie.fromUiModel())
-            _movie.postValue(newMovie)
-            emptyDatabase = databaseEmtpyUseCase()
+            val error = changeMovieFavoriteUseCase(newMovie.fromUiModel())
+
+            _detailState.postValue(UiState(movie = newMovie, error = error))
         }
     }
 
-    fun checkDatabaseIsEmpty(): Boolean = emptyDatabase
+    fun onRetryChangeFavorite() {
+        detailState.value?.movie?.let {
+            favoriteOnClick(it)
+        }
+    }
 
+    fun onBackPressed(
+        category: Category,
+        actionDatabaseIsEmpty: () -> Unit,
+        actionDatabaseNotEmpty: () -> Unit
+    ) {
+        viewModelScope.launch {
+            if (category == Category.FAVORITES && databaseEmtpyUseCase()) {
+                actionDatabaseIsEmpty()
+            } else {
+                actionDatabaseNotEmpty()
+            }
+        }
+    }
+
+    data class UiState(
+        val movie: MovieUi? = null,
+        val error: Error? = null
+    )
 
 }

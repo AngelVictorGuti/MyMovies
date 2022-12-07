@@ -10,28 +10,28 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.angelvictor.movies"
         minSdk 26
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        targetSdk 33
+        versionCode 2
+        versionName "2.0"
 
-        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        testInstrumentationRunner 'com.angelvictor.movies.di.HiltTestRunner'
     }
 
     buildTypes {
         debug{
             minifyEnabled false
             buildConfigField "String", "apiKey", '"206e8990592376607c6ea8c295327875"'
-            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/"'
+            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/movie/"'
         }
         release {
             minifyEnabled false
             buildConfigField "String", "apiKey", '"206e8990592376607c6ea8c295327875"'
-            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/"'
+            buildConfigField "String", "baseUrl", '"https://api.themoviedb.org/3/movie/"'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,7 +44,6 @@ android {
     }
     buildFeatures {
         viewBinding true
-        dataBinding true
     }
 }
 
@@ -67,6 +66,7 @@ dependencies {
 
     implementation Libs.AndroidX.Navigation.fragmentKtx
     implementation Libs.AndroidX.Navigation.uiKtx
+    implementation Libs.AndroidX.Navigation.navigationFragmentKtx
 
     implementation Libs.AndroidX.Room.runtime
     implementation Libs.AndroidX.Room.ktx
@@ -81,14 +81,24 @@ dependencies {
     implementation Libs.Retrofit.retrofit
     implementation Libs.Retrofit.converterGson
 
+    implementation Libs.Arrow.core
+
     implementation Libs.Hilt.android
     kapt Libs.Hilt.compiler
 
     testImplementation Libs.JUnit.junit
+    testImplementation Libs.Mockito.kotlin
+    testImplementation Libs.Mockito.inline
+    testImplementation Libs.Kotlin.Coroutines.test
+    testImplementation Libs.AndroidX.Test.CoreTesting.test
 
     androidTestImplementation Libs.AndroidX.Test.Ext.junit
     androidTestImplementation Libs.AndroidX.Test.Espresso.contrib
     androidTestImplementation Libs.AndroidX.Test.runner
-    androidTestImplementation Libs.AndroidX.Test.rules
+    androidTestImplementation Libs.AndroidX.Test.Rules.rules
+    androidTestImplementation Libs.Hilt.test
+    androidTestImplementation Libs.Kotlin.Coroutines.test
+    kaptAndroidTest Libs.Hilt.compiler
 
+    androidTestImplementation Libs.OkHttp3.mockWebServer
 }

@@ -1,0 +1,414 @@
+{
+  "dates": {
+    "maximum": "2022-11-30",
+    "minimum": "2022-10-13"
+  },
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
+      "genre_ids": [
+        28,
+        14,
+        878
+      ],
+      "id": 436270,
+      "original_language": "en",
+      "original_title": "Black Adam",
+      "overview": "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+      "popularity": 17944.112,
+      "poster_path": "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+      "release_date": "2022-10-21",
+      "title": "Black Adam",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 1689
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 505642,
+      "original_language": "en",
+      "original_title": "Black Panther: Wakanda Forever",
+      "overview": "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+      "popularity": 2806.468,
+      "poster_path": "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
+      "release_date": "2022-11-11",
+      "title": "Black Panther: Wakanda Forever",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 968
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7zQJYV02yehWrQN6NjKsBorqUUS.jpg",
+      "genre_ids": [
+        28,
+        18,
+        36
+      ],
+      "id": 724495,
+      "original_language": "en",
+      "original_title": "The Woman King",
+      "overview": "The story of the Agojie, the all-female unit of warriors who protected the African Kingdom of Dahomey in the 1800s with skills and a fierceness unlike anything the world has ever seen, and General Nanisca as she trains the next generation of recruits and readies them for battle against an enemy determined to destroy their way of life.",
+      "popularity": 581.185,
+      "poster_path": "/438QXt1E3WJWb3PqNniK0tAE5c1.jpg",
+      "release_date": "2022-11-25",
+      "title": "The Woman King",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 385
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/2iGUavwv86Hubv3V5Iq4qEQXDfE.jpg",
+      "genre_ids": [
+        18,
+        53,
+        27
+      ],
+      "id": 848058,
+      "original_language": "vi",
+      "original_title": "Cerdita",
+      "overview": "A bullied overweight teenager sees a glimpse of hope when her tormentors are brutally abducted by a mesmerizing stranger.",
+      "popularity": 487.95,
+      "poster_path": "/8EIQAvJjXdbNDMmBtHtgGqbc09V.jpg",
+      "release_date": "2022-10-14",
+      "title": "Piggy",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 212
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/54PmeEzQMvpojpJBku61ZGQnWUX.jpg",
+      "genre_ids": [
+        16,
+        12,
+        28,
+        14
+      ],
+      "id": 900667,
+      "original_language": "ja",
+      "original_title": "ONE PIECE FILM RED",
+      "overview": "Uta — the most beloved singer in the world. Her voice, which she sings with while concealing her true identity, has been described as “otherworldly.” She will appear in public for the first time at a live concert. As the venue fills with all kinds of Uta fans — excited pirates, the Navy watching closely, and the Straw Hats led by Luffy who simply came to enjoy her sonorous performance — the voice that the whole world has been waiting for is about to resound.",
+      "popularity": 408.309,
+      "poster_path": "/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg",
+      "release_date": "2022-11-03",
+      "title": "One Piece Film Red",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 187
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jBIMZ0AlUYuFNsKbd4L6FojWMoy.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10749
+      ],
+      "id": 820067,
+      "original_language": "ja",
+      "original_title": "映画 五等分の花嫁",
+      "overview": "When five lovely young girls who hate studying hire part-time tutor Futaro, he guides not only their education but also their hearts. Time spent has brought them all closer, with feelings growing within the girls and Futaro. As they finish their third year of high school and their last school festival approaches, they set their sights on what’s next. Is there a future with one of them and Futaro?",
+      "popularity": 379.905,
+      "poster_path": "/sg7klpt1xwK1IJirBI9EHaqQwJ5.jpg",
+      "release_date": "2022-11-18",
+      "title": "The Quintessential Quintuplets Movie",
+      "video": false,
+      "vote_average": 9.1,
+      "vote_count": 105
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1UlTowc5vfrgXUVT6OnlU0TOiij.jpg",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "id": 616820,
+      "original_language": "en",
+      "original_title": "Halloween Ends",
+      "overview": "Four years after the events of Halloween in 2018, Laurie has decided to liberate herself from fear and rage and embrace life. But when a young man is accused of killing a boy he was babysitting, it ignites a cascade of violence and terror that will force Laurie to finally confront the evil she can’t control, once and for all.",
+      "popularity": 363.37,
+      "poster_path": "/yoAKHpveZ4Z1wwwXoD31dXj3H8s.jpg",
+      "release_date": "2022-10-14",
+      "title": "Halloween Ends",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 966
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gJESrIalQkXe7bh9ckyQvgCSlhq.jpg",
+      "genre_ids": [
+        16,
+        12,
+        10751,
+        14,
+        35
+      ],
+      "id": 560052,
+      "original_language": "en",
+      "original_title": "My Father's Dragon",
+      "overview": "Struggling to cope after a move to the city with his mother, Elmer runs away in search of Wild Island and a young dragon who waits to be rescued. Elmer’s adventures introduce him to ferocious beasts, a mysterious island and the friendship of a lifetime.",
+      "popularity": 315.349,
+      "poster_path": "/6hgEe1w0An5fKi3ZqIUBwOyIN2y.jpg",
+      "release_date": "2022-11-11",
+      "title": "My Father's Dragon",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 16
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/c1bz69r0v065TGFA5nqBiKzPDys.jpg",
+      "genre_ids": [
+        35,
+        10751,
+        10402
+      ],
+      "id": 830784,
+      "original_language": "en",
+      "original_title": "Lyle, Lyle, Crocodile",
+      "overview": "When the Primm family moves to New York City, their young son Josh struggles to adapt to his new school and new friends. All of that changes when he discovers Lyle — a singing crocodile who loves baths, caviar and great music — living in the attic of his new home. But when Lyle’s existence is threatened by evil neighbor Mr. Grumps, the Primms must band together to show the world that family can come from the most unexpected places.",
+      "popularity": 458.307,
+      "poster_path": "/irIS5Tn3TXjNi1R9BpWvGAN4CZ1.jpg",
+      "release_date": "2022-10-21",
+      "title": "Lyle, Lyle, Crocodile",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 33
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fBshLiEJcjdfrU3qQBIINcePSsm.jpg",
+      "genre_ids": [
+        16,
+        878,
+        12,
+        10751
+      ],
+      "id": 877269,
+      "original_language": "en",
+      "original_title": "Strange World",
+      "overview": "A journey deep into an uncharted and treacherous land, where fantastical creatures await the legendary Clades—a family of explorers whose differences threaten to topple their latest, and by far most crucial, mission.",
+      "popularity": 280.769,
+      "poster_path": "/szpzEL2rjXQLzaoZqH1EnBQWtZE.jpg",
+      "release_date": "2022-11-25",
+      "title": "Strange World",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 8
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/79PcXPpbDWql74h8Y00mNwbYMbS.jpg",
+      "genre_ids": [
+        80,
+        35,
+        36,
+        9648,
+        53
+      ],
+      "id": 664469,
+      "original_language": "en",
+      "original_title": "Amsterdam",
+      "overview": "In the 1930s, three friends—a doctor, a nurse, and an attorney—witness a murder, become suspects themselves and uncover one of the most outrageous plots in North American history.",
+      "popularity": 167.814,
+      "poster_path": "/6sJcVzGCwrDCBMV0DU6eRzA2UxM.jpg",
+      "release_date": "2022-10-28",
+      "title": "Amsterdam",
+      "video": false,
+      "vote_average": 6.1,
+      "vote_count": 358
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cuAUhb0aYQ9PsdU7EN3L2p1d3Ox.jpg",
+      "genre_ids": [
+        12,
+        35,
+        27,
+        10751
+      ],
+      "id": 864959,
+      "original_language": "en",
+      "original_title": "The Curse of Bridge Hollow",
+      "overview": "A Halloween-hating dad reluctantly teams up with his teenage daughter when an evil spirit wreaks havoc by making their town's decorations come to life.",
+      "popularity": 126.155,
+      "poster_path": "/t6P9l6tcVnWLS1ADUAfkUCGQhm0.jpg",
+      "release_date": "2022-10-14",
+      "title": "The Curse of Bridge Hollow",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 292
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sahdgvn0Brw6AgdwyLHgdCAynWG.jpg",
+      "genre_ids": [
+        16,
+        12,
+        35,
+        10751,
+        14
+      ],
+      "id": 778855,
+      "original_language": "en",
+      "original_title": "Chickenhare and the Hamster of Darkness",
+      "overview": "Young Chickenhare is the adopted son of King Peter, a famous adventurer. Part chicken and part hare, he has a really tough time growing up and disguises himself as a hare to avoid the mockeries of his peers. When the day of the Royal Adventurer Society trials comes, Chickenhare, hampered by his disguise, fails miserably. But he is determined to grab a second chance and find the Scepter of the Hamster of Darkness, before his evil Uncle Lapin. The Scepter will give immense power to its holder. If Lapin gets hold of it, he will be unstoppable. Accompanied by his faithful servant Abe, a sarcastic turtle, and Meg, a martial arts expert skunk, he sets of on an epic and initiatory quest.",
+      "popularity": 120.216,
+      "poster_path": "/2v6f1EqTo4FUxVT9MDXpF6158AX.jpg",
+      "release_date": "2022-10-28",
+      "title": "Chickenhare and the Hamster of Darkness",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 200
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cn9GQzCaeYylEV2hymVR8bskRMJ.jpg",
+      "genre_ids": [
+        9648,
+        53,
+        35
+      ],
+      "id": 766475,
+      "original_language": "en",
+      "original_title": "See How They Run",
+      "overview": "In the West End of 1950s London, plans for a movie version of a smash-hit play come to an abrupt halt after a pivotal member of the crew is murdered. When world-weary Inspector Stoppard and eager rookie Constable Stalker take on the case, the two find themselves thrown into a puzzling whodunit within the glamorously sordid theater underground, investigating the mysterious homicide at their own peril.",
+      "popularity": 82.633,
+      "poster_path": "/r3rpSAi2yukZwr9H2km0WKGODWo.jpg",
+      "release_date": "2022-10-21",
+      "title": "See How They Run",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 347
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/atmII0hn3iQe3IWMBmIb3cc8EJZ.jpg",
+      "genre_ids": [
+        18,
+        27,
+        10749
+      ],
+      "id": 791177,
+      "original_language": "en",
+      "original_title": "Bones and All",
+      "overview": "Abandoned by her father, a young woman named Maren embarks on a thousand-mile odyssey through the backroads of America where she meets Lee, a disenfranchised drifter. But despite their best efforts, all roads lead back to their terrifying pasts and to a final stand that will determine whether their love can survive their otherness.",
+      "popularity": 107.959,
+      "poster_path": "/gH6ppXl2gd1VMKoccKbLK69ZHQq.jpg",
+      "release_date": "2022-11-25",
+      "title": "Bones and All",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 33
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jvulRWEbRnDpUx0UUBB42IuTe87.jpg",
+      "genre_ids": [
+        28,
+        12,
+        35,
+        80,
+        10752
+      ],
+      "id": 873125,
+      "original_language": "it",
+      "original_title": "Rapiniamo il Duce",
+      "overview": "At the end of WWII, an ambitious bootlegger and his nightclub-singing girlfriend assemble a ragtag bunch of misfits for an impossible heist: to steal Mussolini's treasure right from his headquarters.",
+      "popularity": 73.486,
+      "poster_path": "/cbdHqb0kZTgF7jQbUw41KEYVInb.jpg",
+      "release_date": "2022-10-26",
+      "title": "Robbing Mussolini",
+      "video": false,
+      "vote_average": 5.7,
+      "vote_count": 147
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jqYFLfMF0liCsHAVEejaFfHl81Y.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 791333,
+      "original_language": "es",
+      "original_title": "El cuarto pasajero",
+      "overview": "Julián, a divorced man with financial problems, uses a cell phone application to share his car with strangers.",
+      "popularity": 47.271,
+      "poster_path": "/deOu3LDIbWtipp8vjCaszKz22LZ.jpg",
+      "release_date": "2022-10-28",
+      "title": "Four's a Crowd",
+      "video": false,
+      "vote_average": 5.3,
+      "vote_count": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/giveZjQGE4Pn3kJvsTn7uHqLjZS.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 615952,
+      "original_language": "en",
+      "original_title": "Armageddon Time",
+      "overview": "In 1980, Queens, New York, a young Jewish boy befriends a rebellious African-American classmate to the disapproval of his privileged family and begins to reckon with growing up in a world of inequality and prejudice.",
+      "popularity": 65.923,
+      "poster_path": "/2bVjSEaLsUxUZ4Dutz9qRF5zXyd.jpg",
+      "release_date": "2022-11-18",
+      "title": "Armageddon Time",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 68
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ihBrgKx7IuOptUYcblRJHAraRM0.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 901563,
+      "original_language": "fr",
+      "original_title": "Close",
+      "overview": "Thirteen-year-olds Léo and Rémi have always been incredibly close but they are drift apart after the intimacy of their relationship is questioned by schoolmates. When tragedy strikes, one is forced to confront why he distanced himself from his closest friend.",
+      "popularity": 46.568,
+      "poster_path": "/j7ReE0UZ9sgtfLvzszMgQw8Mxb2.jpg",
+      "release_date": "2022-11-25",
+      "title": "Close",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 51
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oySLOwNAsKu6ilFro8XxqP4wDJW.jpg",
+      "genre_ids": [
+        35,
+        10749
+      ],
+      "id": 614939,
+      "original_language": "en",
+      "original_title": "Bros",
+      "overview": "Two men with commitment problems attempt a relationship.",
+      "popularity": 35.006,
+      "poster_path": "/op02Hv5i4Z049nGJYmk6BScRqHO.jpg",
+      "release_date": "2022-10-28",
+      "title": "Bros",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 210
+    }
+  ],
+  "total_pages": 6,
+  "total_results": 109
+}

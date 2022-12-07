@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.angelvictor.movies.domain.Error
+import com.angelvictor.movies.domain.Movie
 import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.MovieUi
 import com.angelvictor.movies.ui.common.toUiModel
@@ -22,31 +24,30 @@ class BillboardViewModel @Inject constructor(
     private val getFavoritesMoviesUseCase: GetFavoritesMoviesUseCase
 ) : ViewModel() {
 
-    private val _moviesList = MutableLiveData<List<MovieUi>>()
-    val moviesList: LiveData<List<MovieUi>>
-        get() = _moviesList
-
-    private val _loader = MutableLiveData<Boolean>()
-    val loader: LiveData<Boolean>
-        get() = _loader
+    private val _billboardState = MutableLiveData<UiState>()
+    val billboardState: LiveData<UiState>
+        get() = _billboardState
 
     fun onUiReady(category: Category) {
         viewModelScope.launch {
-            _loader.postValue(true)
-            val movieList: List<MovieUi> = when (category) {
-                Category.NOW_PLAYING -> requestNowPlayingMoviesUseCase()
-                Category.POPULAR -> requestPopularMoviesUseCase()
-                Category.TOP -> requestTopRatedMoviesUseCase()
-                Category.UPCOMING -> requestUpcomingMoviesUseCase()
-                Category.FAVORITES -> getFavoritesMoviesUseCase()
-            }.map { movie ->
-                movie.toUiModel(checkMovieFavorite(movie.id, category))
+            showLoading()
+            val result = when (category) {
+                Category.NOW_PLAYING -> requestNowPlayingMoviesUseCase.invoke()
+                Category.POPULAR -> requestPopularMoviesUseCase.invoke()
+                Category.TOP -> requestTopRatedMoviesUseCase.invoke()
+                Category.UPCOMING -> requestUpcomingMoviesUseCase.invoke()
+                Category.FAVORITES -> getFavoritesMoviesUseCase.invoke()
             }
-
-            _moviesList.postValue(movieList)
-            _loader.postValue(false)
+            result.fold(
+                ifLeft = { error -> onErrorCallApi(error) },
+                ifRight = { list -> onSuccessCallApi(category, list) }
+            )
         }
 
+    }
+
+    fun showLoading(){
+        _billboardState.postValue(UiState(loading = true))
     }
 
     private suspend fun checkMovieFavorite(id: Int, category: Category): Boolean {
@@ -57,4 +58,24 @@ class BillboardViewModel @Inject constructor(
         }
     }
 
+    private suspend fun onSuccessCallApi(category: Category, movieList: List<Movie>) {
+        val newList = movieList.map { movie ->
+            movie.toUiModel(checkMovieFavorite(movie.id, category))
+        }
+        _billboardState.postValue(
+            UiState(loading = false, movies = newList)
+        )
+    }
+
+    private fun onErrorCallApi(error: Error) {
+        _billboardState.postValue(
+            UiState(loading = false, error = error)
+        )
+    }
+
+    data class UiState(
+        val loading: Boolean? = null,
+        val movies: List<MovieUi>? = null,
+        val error: Error? = null
+    )
 }
