@@ -45,7 +45,7 @@
             app:popUpToInclusive="true" />
         <argument
             android:name="movie"
-            app:argType="com.angelvictor.movies.ui.common.MovieUi"
+            app:argType="com.angelvictor.movies.ui.model.MovieUi"
             app:nullable="false"  />
         <argument
             android:name="category"

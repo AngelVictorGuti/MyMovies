@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.angelvictor.movies.domain.Error
 import com.angelvictor.movies.ui.common.Category
-import com.angelvictor.movies.ui.common.MovieUi
+import com.angelvictor.movies.ui.model.MovieUi
 import com.angelvictor.movies.ui.common.fromUiModel
 import com.angelvictor.movies.usecases.ChangeMovieFavoriteUseCase
 import com.angelvictor.movies.usecases.DatabaseEmtpyUseCase

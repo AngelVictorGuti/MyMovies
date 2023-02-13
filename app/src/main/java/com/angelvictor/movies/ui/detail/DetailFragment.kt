@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.FragmentDetailBinding
-import com.angelvictor.movies.ui.common.MovieUi
+import com.angelvictor.movies.ui.model.MovieUi
 import com.angelvictor.movies.ui.common.loadUrl
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.ceil
