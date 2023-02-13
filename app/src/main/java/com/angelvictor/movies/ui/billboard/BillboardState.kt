@@ -8,7 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.angelvictor.movies.domain.Error
 import com.angelvictor.movies.ui.common.Category
 import com.angelvictor.movies.ui.common.CustomSnackbar
-import com.angelvictor.movies.ui.common.MovieUi
+import com.angelvictor.movies.ui.model.MovieUi
 import com.angelvictor.movies.ui.common.errorToString
 
 fun Fragment.buildBillboardState(

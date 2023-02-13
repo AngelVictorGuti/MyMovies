@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.angelvictor.movies.R
 import com.angelvictor.movies.databinding.ViewMovieBinding
-import com.angelvictor.movies.ui.common.MovieUi
+import com.angelvictor.movies.ui.model.MovieUi
 import com.angelvictor.movies.ui.common.inflate
 import com.angelvictor.movies.ui.common.loadUrl
 
