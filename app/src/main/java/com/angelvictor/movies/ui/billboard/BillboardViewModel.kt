@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.angelvictor.movies.domain.Error
 import com.angelvictor.movies.domain.Movie
 import com.angelvictor.movies.ui.common.Category
-import com.angelvictor.movies.ui.common.MovieUi
+import com.angelvictor.movies.ui.model.MovieUi
 import com.angelvictor.movies.ui.common.toUiModel
 import com.angelvictor.movies.usecases.*
 import dagger.hilt.android.lifecycle.HiltViewModel

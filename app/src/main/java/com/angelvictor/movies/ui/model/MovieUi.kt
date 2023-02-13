@@ -1,6 +1,7 @@
-package com.angelvictor.movies.ui.common
+package com.angelvictor.movies.ui.model
 
 import android.os.Parcelable
+import com.angelvictor.movies.domain.Movie
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
